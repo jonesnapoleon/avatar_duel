@@ -16,7 +16,7 @@ GUI-based Avatar duel Project for Object Oriented Programming Course Informatics
 
 You can explore more about gradle [here](https://guides.gradle.org/creating-new-gradle-builds/)
 
-## Credit
+### Credit
 
 All images and description are taken from [Avatar Wikia](https://avatar.fandom.com/wiki/Avatar_Wiki)
 
