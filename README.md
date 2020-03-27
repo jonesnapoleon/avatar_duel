@@ -1,7 +1,7 @@
-# Avatar Yu Gi Oh
+# Avatar Duel
 
 ## About
-
+GUI-based Avatar duel Project for Object Oriented Programming Course Informatics ITB
 
 ## How to run
 ```
@@ -9,6 +9,7 @@
 ```
 
 > In the command line you can see the data that is being read by `CSVReader.java`
+
 > For this app, the main function lives in `AvatarDuel.java`.
 
 ## Miscellaneous
@@ -21,4 +22,4 @@ All images and description are taken from [Avatar Wikia](https://avatar.fandom.c
 
 ### Contributors
 
-Jones Napoleon Autumn - 13518086
+- Jones Napoleon Autumn - 13518086
