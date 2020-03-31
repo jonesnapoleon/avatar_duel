@@ -1,4 +1,4 @@
-package com.avatarduel.model;
+package com.avatarduel.model.constant;
 
 public enum Element {
   WATER,
