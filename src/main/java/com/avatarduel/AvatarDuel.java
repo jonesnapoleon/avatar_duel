@@ -15,6 +15,8 @@ import com.avatarduel.model.constant.Element;
 import com.avatarduel.model.card.Land;
 import com.avatarduel.model.player.Player;
 import com.avatarduel.util.CSVReader;
+import com.avatarduel.style.Layout;
+
 
 public class AvatarDuel extends Application {
   private static final String LAND_CSV_FILE_PATH = "card/data/land.csv";
@@ -48,7 +50,8 @@ public class AvatarDuel extends Application {
     try {
       this.loadCards();
       text.setText("Avatar Duel!");
-    } catch (Exception e) {
+    }
+    catch (Exception e) {
       text.setText("Failed to load cards: " + e);
     }
   }
