@@ -14,6 +14,7 @@ public class Player {
   private String name;
   private int health;
   private int power[];
+  private int powerLeft[];
   private List<Card> decks;
   private List<Card> cards;
 
@@ -22,6 +23,7 @@ public class Player {
     this.health = initialPlayerHealth;
     this.playerId = ++countPlayer;
     this.power = new int[Element.numberElmt];
+    this.powerLeft = new int[Element.numberElmt];
     this.decks = decks;
     this.moveDecksToCards(numberOfStartingCard);
   }
@@ -34,7 +36,7 @@ public class Player {
     return this.health;
   }
 
-  public int gerPower(int idx){
+  public int getPower(int idx){
     return this.power[idx];
   }
 
