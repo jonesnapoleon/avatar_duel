@@ -1,6 +1,7 @@
 package  com.avatarduel.model;
 
 import java.util.List;
+import java.util.ArrayList;
 
 import com.avatarduel.model.card.*;
 import com.avatarduel.model.constant.Element;
@@ -8,7 +9,7 @@ import com.avatarduel.model.player.Player;
 
 public class Game{
     private static Game game = new Game();
-    private Player p1, p2;
+    //private Player p1, p2;
     private List<Player> players;
 
     private int turnId, phaseNum;
@@ -21,8 +22,11 @@ public class Game{
     }
 
     public void startGame(String a, List<Card> aC, String b, List<Card> bC){
-        this.p1 = new Player(a, aC);
-        this.p2 = new Player(b, bC);
+        //this.p1 = new Player(a, aC);
+        //this.p2 = new Player(b, bC);
+        this.players = new ArrayList<Player>();
+        this.players.add(new Player(a, aC));
+        this.players.add(new Player(b, bC));
         this.turnId = 1;
         this.phaseNum = 0;
     }
@@ -49,11 +53,11 @@ public class Game{
     }
 
     public void mainPhase1() {
-        
+
     }
 
     public void battlePhase() {
-
+        
     }
 
     public void mainPhase2() {
