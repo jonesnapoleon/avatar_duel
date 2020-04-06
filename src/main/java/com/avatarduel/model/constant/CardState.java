@@ -4,4 +4,3 @@ public enum CardState {
     ATTACK,
     DEFENSE
   };
-  
