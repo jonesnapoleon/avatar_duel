@@ -3,14 +3,15 @@ package com.avatarduel.model;
 import java.util.List;
 
 import com.avatarduel.model.card.*;
-import com.avatarduel.model.constant.Element;
+import com.avatarduel.model.card.constant.Element;
 import com.avatarduel.model.player.Player;
 
 public class Game{
     private static Game game = new Game();
     private Player p1, p2;
-    private List<Player> players;
 
+    private int maxInField;
+    private List<Player> players;
     private int turnId, phaseNum;
     private final String[] phase = {"Draw Phase", "Main Phase 1", "Battle Phase", "Main Phase 2", "End Phase"};
 
@@ -28,9 +29,10 @@ public class Game{
     }
 
     public void nextPhase(){
-        this.phaseNum = (this.phaseNum + 1)%5;
-        if(this.phaseNum == 0 )
-            this.turnId = (this.turnId+1)%2;
+        this.phaseNum = (this.phaseNum + 1) % 5;
+        if(this.phaseNum == 0){
+            this.turnId = (this.turnId + 1) % 2;
+        }
     }
 
     public String getPhaseInfo(){

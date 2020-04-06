@@ -1,10 +1,9 @@
 package com.avatarduel.model.player;
 
 import java.util.List;
-import java.util.Random;
 import com.avatarduel.model.card.*;
-import com.avatarduel.model.constant.Element;
 
+import com.avatarduel.model.card.constant.Element;
 
 public class Player {
   public final int numberOfStartingCard = 7;
@@ -48,11 +47,11 @@ public class Player {
     return this.hands;
   }
 
-  public int setPower(int idx, int val) {
+  public void setPower(int idx, int val) {
     this.power[idx] = val;
   }
 
-  public int setTotalPower(int idx, int val) {
+  public void setTotalPower(int idx, int val) {
     this.totalPower[idx] = val;
   }
 

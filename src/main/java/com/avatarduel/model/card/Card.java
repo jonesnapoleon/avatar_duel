@@ -1,8 +1,8 @@
 package com.avatarduel.model.card;
 
-import com.avatarduel.model.constant.Element;
+import com.avatarduel.model.card.constant.Element;
 
-abstract class Card {
+abstract public class Card {
   private String name;
   private String description;
   private Element element;
@@ -16,7 +16,7 @@ abstract class Card {
   public Card(String name, String description, Element element) {
     this.name = "";
     this.description = "";
-    this.element = Element.AIR;
+    this.element = element;
   }
 
   public void ShowInfo(){
