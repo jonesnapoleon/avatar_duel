@@ -16,7 +16,7 @@ public class Player {
   private int power[];
   private int totalPower[];
   private List<Card> decks;
-  private List<Card> cards;
+  private List<Card> hands;
 
   public Player(String name, List<Card> decks){
     this.name = name;
@@ -25,7 +25,7 @@ public class Player {
     this.power = new int[Element.numberElmt];
     this.totalPower = new int[Element.numberElmt];
     this.decks = decks;
-    this.moveDecksToCards(numberOfStartingCard);
+    this.moveDecksToHands(numberOfStartingCard);
   }
 
   public String getName(){
@@ -44,8 +44,8 @@ public class Player {
     return this.totalPower[idx];
   }
 
-  public List<Card> getCards() {
-    return this.cards;
+  public List<Card> getCardsfromHand() {
+    return this.hands;
   }
 
   public int setPower(int idx, int val) {
@@ -56,10 +56,10 @@ public class Player {
     this.totalPower[idx] = val;
   }
 
-  public void moveDecksToCards(int numberOfCard){
+  public void moveDecksToHands(int numberOfCard){
     for(int i = 0; i < numberOfCard; i ++){
       int chosenCardIndex = (int)(Math.random() * ((decks.size() - 0) + 1));
-      cards.add(decks.get(chosenCardIndex));
+      hands.add(decks.get(chosenCardIndex));
       decks.remove(chosenCardIndex);
     }
   }

@@ -1,4 +1,4 @@
-package  com.avatarduel.model;
+package com.avatarduel.model;
 
 import java.util.List;
 
@@ -42,7 +42,7 @@ public class Game{
     }
 
     public void drawPhase() {
-        players.get(this.turnId).moveDecksToCards(1);
+        players.get(this.turnId).moveDecksToHands(1);
         for (int i = 0; i < Element.numberElmt; i++) {
             players.get(this.turnId).setPower(i, players.get(this.turnId).getTotalPower(i));    
         }
