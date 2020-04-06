@@ -16,6 +16,7 @@ import com.avatarduel.model.card.Land;
 import com.avatarduel.model.player.Player;
 import com.avatarduel.util.CSVReader;
 import com.avatarduel.style.Layout;
+import com.avatarduel.model.Game;
 
 
 public class AvatarDuel extends Application {

@@ -6,6 +6,7 @@ import com.avatarduel.model.player.Player;
 public class Game{
     private static Game game = new Game();
     private Player p1, p2;
+    private int maxInField
 
     private int turnId, phaseNum;
     private final String[] phase = {"Draw Phase", "Main Phase 1", "Battle Phase", "Main Phase 2", "End Phase"};
