@@ -14,6 +14,7 @@ public class Player {
   private String name;
   private int health;
   private int power[];
+  private int totalPower[];
   private List<Card> decks;
   private List<Card> cards;
 
@@ -22,6 +23,7 @@ public class Player {
     this.health = initialPlayerHealth;
     this.playerId = ++countPlayer;
     this.power = new int[Element.numberElmt];
+    this.totalPower = new int[Element.numberElmt];
     this.decks = decks;
     this.moveDecksToCards(numberOfStartingCard);
   }
@@ -34,12 +36,24 @@ public class Player {
     return this.health;
   }
 
-  public int gerPower(int idx){
+  public int getPower(int idx){
     return this.power[idx];
+  }
+
+  public int getTotalPower(int idx) {
+    return this.totalPower[idx];
   }
 
   public List<Card> getCards() {
     return this.cards;
+  }
+
+  public int setPower(int idx, int val) {
+    this.power[idx] = val;
+  }
+
+  public int setTotalPower(int idx, int val) {
+    this.totalPower[idx] = val;
   }
 
   public void moveDecksToCards(int numberOfCard){
