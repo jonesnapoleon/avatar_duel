@@ -3,6 +3,7 @@ package  com.avatarduel.model;
 import java.util.List;
 
 import com.avatarduel.model.card.*;
+import com.avatarduel.model.constant.Element;
 import com.avatarduel.model.player.Player;
 
 public class Game{
@@ -41,12 +42,14 @@ public class Game{
     }
 
     public void drawPhase() {
-        this.players.get(this.turnId).moveDecksToCards(1);
-        // Set Power
+        players.get(this.turnId).moveDecksToCards(1);
+        for (int i = 0; i < Element.numberElmt; i++) {
+            players.get(this.turnId).setPower(i, players.get(this.turnId).getTotalPower(i));    
+        }
     }
 
     public void mainPhase1() {
-
+        
     }
 
     public void battlePhase() {
