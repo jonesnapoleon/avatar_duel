@@ -1,7 +1,7 @@
 package com.avatarduel;
 
 public class ErrorClass extends Exception{
-    ErrorClass(String msg){
+    public ErrorClass(String msg){
         super(msg);
     }
 }
