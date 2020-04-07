@@ -1,5 +1,7 @@
 package com.avatarduel.model.card;
 
 public interface ISummoned {
-    boolean isOccupied();
+    public boolean isOccupied();
+    public void setEmpty();
+    public void insertCard(Card card);
 }
