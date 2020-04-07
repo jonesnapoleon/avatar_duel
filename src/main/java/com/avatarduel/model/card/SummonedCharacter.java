@@ -31,7 +31,7 @@ public class SummonedCharacter extends Character implements ISummoned {
         this.occupied = false;
     }
 
-    public void insertCard(Card x){
+    public void insertCard(Card x) throws ErrorClass {
         if(x instanceof Character){
             Character y  = (Character)x;
             this.setAttack(y.getAttack());

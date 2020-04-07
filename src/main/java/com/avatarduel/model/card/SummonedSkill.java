@@ -17,7 +17,7 @@ public class SummonedSkill extends Skill implements ISummoned {
         this.occupied = false;
     }
 
-    public void insertCard(Card x){
+    public void insertCard(Card x) throws ErrorClass {
         if(x instanceof Skill){
             this.setEffect(((Skill)x).getEffect());
         }
