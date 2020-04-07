@@ -5,7 +5,7 @@ import com.avatarduel.model.card.constant.CardState;
 public class SummonedCharacter implements ISummoned  {
     private CardState state;
     private Character character;
-    private Boolean occupied;
+    private boolean occupied;
 
     public SummonedCharacter() {
         occupied = false;
