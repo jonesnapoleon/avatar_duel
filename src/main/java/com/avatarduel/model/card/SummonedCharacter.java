@@ -2,7 +2,7 @@ package com.avatarduel.model.card;
 
 import com.avatarduel.model.card.constant.CardState;
 
-public class SummonedCharacter implements ISummoned  {
+public class SummonedCharacter implements ISummoned extends Character {
     private CardState state;
     private Character character;
     private Boolean occupied;
