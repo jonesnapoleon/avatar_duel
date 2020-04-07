@@ -1,4 +1,5 @@
 package com.avatarduel.model.card;
+import com.avatarduel.ErrorClass;
 
 public class SummonedSkill extends Skill implements ISummoned {
     private boolean occupied; 
@@ -8,14 +9,24 @@ public class SummonedSkill extends Skill implements ISummoned {
         this.occupied = false;
     }
 
-    @Override
+    public boolean isOccupied(){
+        return this.occupied;
+    }
+
     public void setEmpty(){
         this.occupied = false;
     }
 
-    @Override
     public void setCard(Card x){
-        this.occupied = false;
-        this.
+        if(x instanceof Skill){
+            ((Skill)x).setEffect(((Skill)x).getEffect());
+        }
+        else{
+            throw new ErrorClass("Tipe card harus skill!!");
+        }
+        this.occupied = true;
+        this.setName(x.getName());
+        this.setDesc(x.getDesc());
+        this.setElement(x.getElement());
     }
 }

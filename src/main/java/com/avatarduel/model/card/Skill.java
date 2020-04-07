@@ -18,6 +18,14 @@ public class Skill extends Card {
     this.power = 0;
   }
 
+  public SkillEffect getEffect(){
+    return this.effect;
+  }
+
+  public void setEffect(SkillEffect se){
+    this.effect = se;
+  }
+
   public void ShowInfo(){
     super.ShowInfo();
     System.out.println("Power: " + this.power);

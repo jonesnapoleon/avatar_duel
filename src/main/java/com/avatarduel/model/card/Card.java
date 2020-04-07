@@ -27,7 +27,7 @@ abstract public class Card {
     return this.description;
   }
 
-  public String getElement(){
+  public Element getElement(){
     return this.element;
   }
 
