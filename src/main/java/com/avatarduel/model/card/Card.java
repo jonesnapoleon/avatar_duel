@@ -19,6 +19,30 @@ abstract public class Card {
     this.element = element;
   }
 
+  public String getName(){
+    return this.name;
+  }
+
+  public String getDesc(){
+    return this.description;
+  }
+
+  public Element getElement(){
+    return this.element;
+  }
+
+  public void setName(String name){
+    this.name = name;
+  }
+
+  public void setDesc(String desc){
+    this.description = desc;
+  }
+
+  public void setElement(Element e){
+    this.element = e;
+  }
+
   public void ShowInfo(){
     System.out.println("Name: " + this.name);
     System.out.println("Element: " + this.element);

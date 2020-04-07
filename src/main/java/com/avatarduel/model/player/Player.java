@@ -55,10 +55,6 @@ public class Player {
     this.totalPower[idx] = val;
   }
 
-  public void setHealth(int health) {
-    this.health = health;
-  }
-
   public void moveDecksToHands(int numberOfCard){
     for(int i = 0; i < numberOfCard; i ++){
       int chosenCardIndex = (int)(Math.random() * ((decks.size() - 0) + 1));
