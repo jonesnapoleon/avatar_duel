@@ -26,9 +26,9 @@ public class Player {
     this.power = new int[Element.numberElmt];
     this.totalPower = new int[Element.numberElmt];
     this.decks = decks;
-    this.skills = new List<SummonedSkill>();
-    this.chars = new List<SummonedCharacter>();
-    this.hands = new List<Card>();
+    this.skills = new ArrayList<SummonedSkill>();
+    this.chars = new ArrayList<SummonedCharacter>();
+    this.hands = new ArrayList<Card>();
     this.moveDecksToHands(numberOfStartingCard);
   }
 
