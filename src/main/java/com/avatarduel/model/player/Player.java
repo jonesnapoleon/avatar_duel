@@ -1,6 +1,6 @@
 package com.avatarduel.model.player;
 
-import java.util.List;
+import java.util.*;
 import com.avatarduel.model.card.*;
 
 import com.avatarduel.model.card.constant.Element;
@@ -16,6 +16,8 @@ public class Player {
   private int totalPower[];
   private List<Card> decks;
   private List<Card> hands;
+  private List<SummonedSkill> skills;
+  private List<SummonedCharacter> chars;
 
   public Player(String name, List<Card> decks){
     this.name = name;
@@ -24,6 +26,9 @@ public class Player {
     this.power = new int[Element.numberElmt];
     this.totalPower = new int[Element.numberElmt];
     this.decks = decks;
+    this.skills = new List<SummonedSkill>();
+    this.chars = new List<SummonedCharacter>();
+    this.hands = new List<Card>();
     this.moveDecksToHands(numberOfStartingCard);
   }
 
@@ -55,6 +60,10 @@ public class Player {
     this.totalPower[idx] = val;
   }
 
+  public void setHealth(int health) {
+    this.health = health;
+  }
+
   public void moveDecksToHands(int numberOfCard){
     for(int i = 0; i < numberOfCard; i ++){
       int chosenCardIndex = (int)(Math.random() * ((decks.size() - 0) + 1));
@@ -62,5 +71,4 @@ public class Player {
       decks.remove(chosenCardIndex);
     }
   }
- 
 }

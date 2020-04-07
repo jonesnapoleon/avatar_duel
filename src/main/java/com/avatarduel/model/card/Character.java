@@ -20,6 +20,30 @@ public class Character extends Card {
     this.power = power;
   }
 
+  public int getAttack() {
+    return this.attack;
+  }
+
+  public int getDefense() {
+    return this.defense;
+  }
+
+  public int getPower(){
+    return this.power;
+  }
+
+  public void setAttack(int attack){
+    this.attack = attack;
+  }
+
+  public void setDefense(int defense){
+    this.defense = defense;
+  }
+
+  public void setPower(int power){
+    this.power = power;
+  }
+
   public void ShowInfo(){
     super.ShowInfo();
     System.out.println("Attack: " + this.attack);

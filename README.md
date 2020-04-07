@@ -23,3 +23,5 @@ All images and description are taken from [Avatar Wikia](https://avatar.fandom.c
 ### Contributors
 
 - Jones Napoleon Autumn - 13518086
+- Naufal Prima Yoriko - 13518146
+- Jonet Wira Murti - 
