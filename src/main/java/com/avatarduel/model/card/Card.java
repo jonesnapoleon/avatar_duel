@@ -14,8 +14,8 @@ abstract public class Card {
   }
 
   public Card(String name, String description, Element element) {
-    this.name = "";
-    this.description = "";
+    this.name = name;
+    this.description = description;
     this.element = element;
   }
 

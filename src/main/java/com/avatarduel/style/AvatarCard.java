@@ -1,5 +1,5 @@
 package com.avatarduel.style;
 
-public class Card {
+public class AvatarCard {
 
 }
