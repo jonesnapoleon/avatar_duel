@@ -1,5 +1,5 @@
 package com.avatarduel.model.card;
-import com.avatarduel.model.constant.Element;
+import com.avatarduel.model.card.constant.Element;
 
 public class Character extends Card {
   private int attack;
@@ -18,6 +18,14 @@ public class Character extends Card {
     this.attack = attack;
     this.defense = defense;
     this.power = power;
+  }
+
+  public int getAttack() {
+    return this.attack;
+  }
+
+  public int getDefense() {
+    return this.defense;
   }
 
   public void ShowInfo(){

@@ -1,4 +1,4 @@
-package com.avatarduel.model.constant;
+package com.avatarduel.model.card.constant;
 
 public enum SkillEffect {
   AURA,

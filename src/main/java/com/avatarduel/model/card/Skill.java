@@ -1,6 +1,6 @@
 package com.avatarduel.model.card;
-import com.avatarduel.model.constant.Element;
-import com.avatarduel.model.constant.SkillEffect;
+import com.avatarduel.model.card.constant.Element;
+import com.avatarduel.model.card.constant.SkillEffect;
 
 public class Skill extends Card {
   private SkillEffect effect;
