@@ -13,13 +13,13 @@ public class SummonedSkill extends Skill implements ISummoned {
         return this.occupied;
     }
 
-    public void setEmpty(){
+    public void removeCard(){
         this.occupied = false;
     }
 
-    public void setCard(Card x){
+    public void insertCard(Card x){
         if(x instanceof Skill){
-            ((Skill)x).setEffect(((Skill)x).getEffect());
+            this.setEffect(((Skill)x).getEffect());
         }
         else{
             throw new ErrorClass("Tipe card harus skill!!");
