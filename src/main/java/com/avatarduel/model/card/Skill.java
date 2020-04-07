@@ -12,23 +12,31 @@ public class Skill extends Card {
     this.power = 0;
   }
 
-  public Skill(String name, String description, Element element, SkillEffect effect, int power) {
-    super(name, description, element);
+  public Skill(int id, String name, String description, Element element, int power, SkillEffect effect) {
+    super(id, name, description, element);
     this.effect = effect;
-    this.power = 0;
+    this.power = power;
   }
 
   public SkillEffect getEffect(){
     return this.effect;
   }
 
+  public int getPower(){
+    return this.power;
+  }
+
   public void setEffect(SkillEffect se){
     this.effect = se;
   }
 
+  public void setPower(int power){
+    this.power = power;
+  }
+
   public void ShowInfo(){
     super.ShowInfo();
-    System.out.println("Power: " + this.power);
     System.out.println("Skill Effect: " + this.effect);
+    System.out.println("Power: " + this.power);
   }
 }

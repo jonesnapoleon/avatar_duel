@@ -1,6 +1,6 @@
 package com.avatarduel.model.card.constant;
 
-public enum CharState {
+public enum CardState {
     ATTACK,
     DEFENSE
   };

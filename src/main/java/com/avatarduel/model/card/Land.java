@@ -7,8 +7,8 @@ public class Land extends Card {
     super();
   }
 
-  public Land(String name, String description, Element element) {
-    super(name, description, element);
+  public Land(int id, String name, String description, Element element) {
+    super(id, name, description, element);
   }
 
   public void ShowInfo(){

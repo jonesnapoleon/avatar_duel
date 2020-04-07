@@ -13,8 +13,8 @@ public class Character extends Card {
     this.power = 0;
   }
 
-  public Character(String name, String description, Element element, int power, int attack, int defense) {
-    super(name, description, element);
+  public Character(int id, String name, String description, Element element, int power, int attack, int defense) {
+    super(id, name, description, element);
     this.attack = attack;
     this.defense = defense;
     this.power = power;

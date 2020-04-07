@@ -71,7 +71,7 @@ public class Game{
     public void battlePhase(int attackerIdx, int defenderIdx) {
         if (this.playedCharacters.get(this.turnId)[attackerIdx].getCardState() == CardState.ATTACK && 
             this.playedCharacters.get(this.turnId)[attackerIdx].getStateValue() >= this.playedCharacters.get((this.turnId + 1)%2)[defenderIdx].getStateValue()) {
-                this.playedCharacters.get((this.turnId + 1)%2)[defenderIdx].removeCharacter();
+                // this.playedCharacters.get((this.turnId + 1)%2)[defenderIdx].removeCharacter();
                 // Hapus Skill yang mengikuti
                 if (this.playedCharacters.get((this.turnId + 1)%2)[defenderIdx].getCardState() == CardState.ATTACK) {
                     this.players.get((this.turnId + 1)%2).setHealth(this.players.get((this.turnId + 1)%2).getHealth() - 

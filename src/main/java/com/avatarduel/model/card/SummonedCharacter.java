@@ -1,10 +1,10 @@
 package com.avatarduel.model.card;
 
-import com.avatarduel.model.card.constant.CharState;
+import com.avatarduel.model.card.constant.CardState;
 import com.avatarduel.ErrorClass;
 
 public class SummonedCharacter extends Character implements ISummoned {
-    private CharState state;
+    private CardState state;
     private boolean occupied;
 
     public SummonedCharacter() {
@@ -16,12 +16,12 @@ public class SummonedCharacter extends Character implements ISummoned {
         return this.occupied;
     }
 
-    public CharState getCharState() {
+    public CardState getCardState() {
         return this.state;
     }
 
     public int getStateValue() {
-        if (this.state == CharState.ATTACK)
+        if (this.state == CardState.ATTACK)
             return this.getAttack();
         else
             return this.getDefense();
@@ -31,7 +31,7 @@ public class SummonedCharacter extends Character implements ISummoned {
         this.occupied = false;
     }
 
-    public void insertCard(Card x){
+    public void insertCard(Card x) throws ErrorClass {
         if(x instanceof Character){
             Character y  = (Character)x;
             this.setAttack(y.getAttack());
@@ -47,7 +47,7 @@ public class SummonedCharacter extends Character implements ISummoned {
         this.setElement(x.getElement());
     }
 
-    public void setPosition(CharState c){
+    public void setPosition(CardState c){
         this.state = c;
     }
 
@@ -56,9 +56,9 @@ public class SummonedCharacter extends Character implements ISummoned {
     }
 
     public void rotate() {
-        if (this.state == CharState.ATTACK)
-            this.state = CharState.DEFENSE;
+        if (this.state == CardState.ATTACK)
+            this.state = CardState.DEFENSE;
         else
-            this.state = CharState.ATTACK;
+            this.state = CardState.ATTACK;
     }
 }
