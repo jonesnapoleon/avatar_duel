@@ -3,6 +3,7 @@ package com.avatarduel.model;
 import java.util.List;
 import java.util.ArrayList;
 
+import com.avatarduel.ErrorClass;
 import com.avatarduel.model.card.*;
 import com.avatarduel.model.card.constant.CardState;
 import com.avatarduel.model.card.constant.Element;
@@ -17,6 +18,8 @@ public class Game{
     //private List<> playedSkill;
     private int turnId, phaseNum;
     private final String[] phase = {"Draw Phase", "Main Phase 1", "Battle Phase", "Main Phase 2", "End Phase"};
+    private String response[];
+    private String command[];
 
     private Game(){}
 
@@ -40,6 +43,15 @@ public class Game{
         }
         this.turnId = 1;
         this.phaseNum = 0;
+        this.response = new String[2];
+    }
+
+    public String[] getResponse(){
+        return this.response;
+    }
+
+    public void sendCommand(String cmd){
+        this.command = cmd.split(" ");
     }
 
     public void nextPhase(){
@@ -60,6 +72,15 @@ public class Game{
         }
     }
 
+    private void setErrResponse(String errCode, String msg){
+        this.response[0] = errCode;
+        this.response[1] = msg;
+    }
+
+    private void setNormalResponse(){
+        this.response[0] = "200";
+    }
+
     public String getPhaseInfo(){
         return this.phase[this.phaseNum];
     }
@@ -77,15 +98,102 @@ public class Game{
     }
 
     public void mainPhase1() {
-        
-    }
+        boolean loop = true;
+        while(loop){
+            if(this.command[0] == "next")
+                loop = false;
+            else if(this.command[0] == "addcard"){
+                try{
+
+
+                    setNormalResponse();
+                }
+                catch(ErrorClass e){
+                    setErrResponse(e.getErrCode(), e.getErrMsg());
+                }
+            }
+            else if(this.command[0] == "addland"){
+                try{
+
+
+                    setNormalResponse();
+                }
+                catch(ErrorClass e){
+                    setErrResponse(e.getErrCode(), e.getErrMsg());
+                }
+            }
+            else if(this.command[0] == "changepos"){
+
+            }
+
+        }
+        nextPhase();
+    }   
 
     public void battlePhase() {
-        
+        boolean loop = true;
+        while(loop){
+            if(this.command[0] == "next")
+                loop = false;
+            else if(this.command[0] == "addcard"){
+                try{
+
+
+                    setNormalResponse();
+                }
+                catch(ErrorClass e){
+                    setErrResponse(e.getErrCode(), e.getErrMsg());
+                }
+            }
+            else if(this.command[0] == "addland"){
+                try{
+
+
+                    setNormalResponse();
+                }
+                catch(ErrorClass e){
+                    setErrResponse(e.getErrCode(), e.getErrMsg());
+                }
+            }
+            else if(this.command[0] == "changepos"){
+
+            }
+
+        }
+        nextPhase();
     }
 
     public void mainPhase2() {
+        boolean loop = true;
+        while(loop){
+            if(this.command[0] == "next")
+                loop = false;
+            else if(this.command[0] == "addcard"){
+                try{
 
+
+                    setNormalResponse();
+                }
+                catch(ErrorClass e){
+                    setErrResponse(e.getErrCode(), e.getErrMsg());
+                }
+            }
+            else if(this.command[0] == "addland"){
+                try{
+
+
+                    setNormalResponse();
+                }
+                catch(ErrorClass e){
+                    setErrResponse(e.getErrCode(), e.getErrMsg());
+                }
+            }
+            else if(this.command[0] == "changepos"){
+
+            }
+
+        }
+        nextPhase();
     }
 
     public void attack(int attackerIdx, int defenderIdx){
