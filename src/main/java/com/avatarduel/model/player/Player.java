@@ -6,6 +6,7 @@ import com.avatarduel.ErrorClass;
 import com.avatarduel.model.card.*;
 import com.avatarduel.model.card.Character;
 import com.avatarduel.model.card.constant.Element;
+import com.avatarduel.model.card.constant.*;
 
 public class Player {
   public final int numberOfStartingCard = 7;
@@ -40,6 +41,10 @@ public class Player {
       this.skills[i] = new SummonedSkill();
       this.chars[i] = new SummonedCharacter();
     }
+  }
+
+  public SummonedCharacter[] getChar() {
+    return this.chars;
   }
 
   public SummonedSkill[] getSkills() {
@@ -82,15 +87,16 @@ public class Player {
     }
   }
 
-  public void moveCharToField(int idx, int cardId) {
+  public void moveCharToField(int idx, int cardId, CardState cardState) {
     Card removed = hands.stream().filter(card -> (cardId == card.getId())).findAny().orElse(null);
-    if (!removed.equals(null)) {
+    if (!(removed == null)) {
       Character cast = (Character)removed;
       if (cast.getPower() <= this.power[cast.getElement().ordinal()]) {
         hands.remove(removed);
         try {
           if (!chars[idx].isOccupied()) {
             chars[idx].insertCard(removed);
+            chars[idx].setPosition(cardState);
           }
         } catch(ErrorClass exc) {
           System.out.println(exc.getMessage());
@@ -104,16 +110,18 @@ public class Player {
     }
   }
 
-  public void moveSkillToField(int idx, int cardId, int charId) {
+  public void moveSkillToField(int idx, int cardId, SummonedCharacter summonedCharacter) {
     Card removed = hands.stream().filter(card -> (cardId == card.getId())).findAny().orElse(null);
-    if (!removed.equals(null)) {
+    if (!(removed == null)) {
+      // Potential Error
       Skill cast = (Skill)removed;
       if (cast.getPower() <= this.power[cast.getElement().ordinal()]) {
         hands.remove(removed);
         try {
           if (!skills[idx].isOccupied()) {
             skills[idx].insertCard(removed);
-            skills[idx].setCharId(charId);
+            summonedCharacter.addSkill(skills[idx]);
+            skills[idx].addCharacter(summonedCharacter);
           }
         } catch(ErrorClass exc) {
           System.out.println(exc.getMessage());
@@ -129,7 +137,7 @@ public class Player {
 
   public void playLandCard(int cardId) {
     Card removed = hands.stream().filter(card -> (cardId == card.getId())).findAny().orElse(null);
-    if (!removed.equals(null)) {
+    if (!(removed == null)) {
       if (removed instanceof Land) {
         hands.remove(removed);
         this.power[((Land)removed).getElement().ordinal()] += 1;
@@ -143,20 +151,15 @@ public class Player {
   }
 
   public void killChar(int idx, Player enemy) {
-    for (SummonedSkill summonedSkill : skills) {
-      if (summonedSkill.getCharId() == this.chars[idx].getId()) {
-        removeSkill(summonedSkill.getId());
-      }
+    if (this.chars[idx].isOccupied()) {
+      this.chars[idx].removeCard();
     }
-    for (SummonedSkill summonedSkill : enemy.getSkills()) {
-      if (summonedSkill.getCharId() == this.chars[idx].getId()) {
-        enemy.removeSkill(summonedSkill.getId());
-      }
-    }
-    this.chars[idx].removeCard();
   }
 
   public void removeSkill(int idx) {
-    this.skills[idx].removeCard();
+    if (this.skills[idx].isOccupied()) {
+      this.skills[idx].getSChar().getSSkill().remove(this.skills[idx]);
+      this.skills[idx].removeCard();
+    }
   }
 }

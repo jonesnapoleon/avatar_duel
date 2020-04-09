@@ -2,7 +2,7 @@ package com.avatarduel.model.card;
 import com.avatarduel.model.card.constant.Element;
 import com.avatarduel.model.card.constant.SkillEffect;
 
-public class Skill extends Card {
+abstract public class Skill extends Card {
   private SkillEffect effect;
   private int power;
 
@@ -39,4 +39,8 @@ public class Skill extends Card {
     System.out.println("Skill Effect: " + this.effect);
     System.out.println("Power: " + this.power);
   }
+
+  public abstract void activate(SummonedCharacter c);
+
+  public abstract void deactivate(SummonedCharacter c);
 }
