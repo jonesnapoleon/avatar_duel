@@ -4,7 +4,8 @@ public enum Element {
   WATER,
   FIRE,
   AIR,
-  EARTH;
+  EARTH,
+  ENERGY;
 
-  public static final int numberElmt = 4;
+  public static final int numberElmt = 5;
 };
