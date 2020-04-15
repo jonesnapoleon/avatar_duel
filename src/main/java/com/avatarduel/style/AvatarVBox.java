@@ -35,9 +35,12 @@ public class AvatarVBox extends VBox {
             AvatarArenaLayout player1Layout = new AvatarArenaLayout(new Rectangle(), widthForArena, 2 * heightForEachSection, Color.ANTIQUEWHITE);
             AvatarArenaLayout player2Layout = new AvatarArenaLayout(new Rectangle(), widthForArena, 2 * heightForEachSection, Color.DARKGREEN);
 
+            AvatarCard a = new AvatarCard(new Rectangle(),widthForArena ,heightForEachSection,Color.BLUE);
+            AvatarCard b = new AvatarCard(new Rectangle(),widthForArena ,heightForEachSection,Color.VIOLET);
             this.getChildren().addAll(player1HandsCard, player1Layout, player2Layout, player2HandsCard);
             this.setHeight(height);
             this.setWidth(width);
+            this.getChildren().addAll(a,b);
         }
     }
 
