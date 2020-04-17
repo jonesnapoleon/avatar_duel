@@ -51,6 +51,7 @@ abstract public class Card {
   }
 
   public void ShowInfo(){
+    System.out.println("Id : " + this.id);
     System.out.println("Name: " + this.name);
     System.out.println("Element: " + this.element);
     System.out.println("Description: " + this.description);

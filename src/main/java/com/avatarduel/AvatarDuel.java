@@ -30,9 +30,11 @@ public class AvatarDuel extends Application {
   private static final String LAND_CSV_FILE_PATH = "card/data/land.csv";
   private static final String SKILL_CSV_FILE_PATH = "card/data/skill_aura.csv";
   private static final String CHAR_CSV_FILE_PATH = "card/data/character.csv";
+  private List<Card> deck1 = new ArrayList<Card>();
+  private List<Card> deck2 = new ArrayList<Card>();
 
   public void loadCards() throws IOException, URISyntaxException {
-    int charComp = 30; int skillComp = 15; int landComp = 15;
+    int charComp = 25; int skillComp = 20; int landComp = 15;
     List<Integer> charShuffler, skillShuffler, landShuffler; 
     int idx = 1;
 
@@ -67,23 +69,83 @@ public class AvatarDuel extends Application {
     Collections.shuffle(charShuffler);
 
     for (int z = 0; z < landComp; z++) {
-      Land l = new Land(Integer.parseInt(landRows.get(landShuffler.get(z))[0]), 
-                        landRows.get(landShuffler.get(z))[1], 
-                        landRows.get(landShuffler.get(z))[3], 
-                        Element.valueOf(landRows.get(landShuffler.get(z))[2]));
+      deck1.add(new Land(Integer.parseInt(landRows.get(landShuffler.get(z))[0])*10, 
+                landRows.get(landShuffler.get(z))[1], 
+                landRows.get(landShuffler.get(z))[3], 
+                Element.valueOf(landRows.get(landShuffler.get(z))[2])));
+      deck2.add(new Land(Integer.parseInt(landRows.get(landShuffler.get(z))[0])*10 + 1, 
+                landRows.get(landShuffler.get(z))[1], 
+                landRows.get(landShuffler.get(z))[3], 
+                Element.valueOf(landRows.get(landShuffler.get(z))[2])));
       idx++;
     }
 
-    for (int z = 0; z < skillComp; z++) {
-      Aura l = new Aura(Integer.parseInt(landRows.get(landShuffler.get(z))[0]), 
-                        landRows.get(landShuffler.get(z))[1], 
-                        landRows.get(landShuffler.get(z))[3], 
-                        Element.valueOf(landRows.get(landShuffler.get(z))[2]),
-                        Integer.parseInt(skillRows.get(skillShuffler.get(z))[5]),
-                        SkillEffect.AURA, Integer.parseInt(skillRows.get(skillShuffler.get(z))[6]), 
-                        Integer.parseInt(skillRows.get(skillShuffler.get(z))[7]));
+    for (int z = 0; z < skillComp/2; z++) {
+      deck1.add(new Aura(Integer.parseInt(skillRows.get(skillShuffler.get(z))[0])*10, 
+                skillRows.get(skillShuffler.get(z))[1], 
+                skillRows.get(skillShuffler.get(z))[3], 
+                Element.valueOf(skillRows.get(skillShuffler.get(z))[2]),
+                Integer.parseInt(skillRows.get(skillShuffler.get(z))[5]),
+                SkillEffect.AURA, Integer.parseInt(skillRows.get(skillShuffler.get(z))[6]), 
+                Integer.parseInt(skillRows.get(skillShuffler.get(z))[7])));
+      deck2.add(new Aura(Integer.parseInt(skillRows.get(skillShuffler.get(z))[0])*10 + 1, 
+                skillRows.get(skillShuffler.get(z))[1], 
+                skillRows.get(skillShuffler.get(z))[3], 
+                Element.valueOf(skillRows.get(skillShuffler.get(z))[2]),
+                Integer.parseInt(skillRows.get(skillShuffler.get(z))[5]),
+                SkillEffect.AURA, Integer.parseInt(skillRows.get(skillShuffler.get(z))[6]), 
+                Integer.parseInt(skillRows.get(skillShuffler.get(z))[7])));
       idx++;
     }
+
+    for (int z = 0; z < charComp; z++) {
+      deck1.add(new Character(Integer.parseInt(charRows.get(charShuffler.get(z))[0])*10, 
+                charRows.get(charShuffler.get(z))[1], 
+                charRows.get(charShuffler.get(z))[3], 
+                Element.valueOf(charRows.get(charShuffler.get(z))[2]),
+                Integer.parseInt(charRows.get(charShuffler.get(z))[7]),
+                Integer.parseInt(charRows.get(charShuffler.get(z))[5]), 
+                Integer.parseInt(charRows.get(charShuffler.get(z))[6])));
+      deck2.add(new Character(Integer.parseInt(charRows.get(charShuffler.get(z))[0])*10 + 1, 
+                charRows.get(charShuffler.get(z))[1], 
+                charRows.get(charShuffler.get(z))[3], 
+                Element.valueOf(charRows.get(charShuffler.get(z))[2]),
+                Integer.parseInt(charRows.get(charShuffler.get(z))[7]),
+                Integer.parseInt(charRows.get(charShuffler.get(z))[5]), 
+                Integer.parseInt(charRows.get(charShuffler.get(z))[6])));
+      idx++;
+    }
+
+    for (int z = 0; z < skillComp/4; z++) {
+      deck1.add(new PowerUp(idx*10, Element.values()[z] + " Power Up", "power up card", Element.values()[z], 2, SkillEffect.POWER_UP));
+      deck2.add(new PowerUp(idx*10 + 1, Element.values()[z] + " Power Up", "power up card", Element.values()[z], 2, SkillEffect.POWER_UP));
+      idx++;
+    }
+
+    for (int z = 0; z < skillComp/4; z++) {
+      deck1.add(new Destroy(idx*10, Element.values()[z] + " Destroy", "destroy card", Element.values()[z], 2, SkillEffect.DESTROY));
+      deck2.add(new Destroy(idx*10 + 1, Element.values()[z] + " Destroy", "destroy card", Element.values()[z], 2, SkillEffect.DESTROY));
+      idx++;
+    }
+    /*
+    System.out.println("Deck1");
+    int i = 0;
+    for (Card card : deck1) {
+      card.ShowInfo();
+      System.out.println();
+      i++;
+    }
+    System.out.println("Total Card : " + i);
+
+    System.out.println("Deck2");
+    i = 0;
+    for (Card card : deck2) {
+      card.ShowInfo();
+      System.out.println();
+      i++;
+    }
+    System.out.println("Total Card : " + i);
+    */
   }
   
   @Override
