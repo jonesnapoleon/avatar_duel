@@ -150,27 +150,27 @@ public class AvatarDuel extends Application {
   
   @Override
   public void start(Stage primaryStage) {
-    //Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
-    //primaryStage.setTitle("Avatar Duel");
-    //Group root = new Group();
+    Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
+    primaryStage.setTitle("Avatar Duel");
+    Group root = new Group();
 
-    //Text text = new Text("");
-    //root.getChildren().add(text);
+    Text text = new Text("");
+    root.getChildren().add(text);
 
-//    AvatarPlayerCard c1 = new AvatarPlayerCard(Player p1);
-//    AvatarPlayerCard c2 = new AvatarPlayerCard(Player p2);
-    //final double widthForHoveredCardComponent = screenBounds.getWidth() / 5;
-    //AvatarVBox hoveredCardComponent = new AvatarVBox(true, widthForHoveredCardComponent, screenBounds.getHeight());
-    //AvatarVBox arenaComponent = new AvatarVBox(false, screenBounds.getWidth() - widthForHoveredCardComponent, screenBounds.getHeight());
+    AvatarPlayerCard c1 = new AvatarPlayerCard(ADD HERE, "player 1");
+    AvatarPlayerCard c2 = new AvatarPlayerCard(ADD HERE, "player 2");
+    final double widthForHoveredCardComponent = screenBounds.getWidth() / 5;
+    AvatarVBox hoveredCardComponent = new AvatarVBox(true, widthForHoveredCardComponent, screenBounds.getHeight());
+    AvatarVBox arenaComponent = new AvatarVBox(false, screenBounds.getWidth() - widthForHoveredCardComponent, screenBounds.getHeight());
 
-    //AvatarStackPane hoveredCardPane = new AvatarStackPane(hoveredCardComponent, widthForHoveredCardComponent, screenBounds.getHeight(), Color.BLACK);
-    //AvatarStackPane battleArenaPane = new AvatarStackPane(arenaComponent, screenBounds.getWidth() - widthForHoveredCardComponent, screenBounds.getHeight(), Color.PURPLE);
-    //battleArenaPane.setTranslateX(widthForHoveredCardComponent);
-    //root.getChildren().addAll(hoveredCardPane, battleArenaPane);
+    AvatarStackPane hoveredCardPane = new AvatarStackPane(hoveredCardComponent, widthForHoveredCardComponent, screenBounds.getHeight(), Color.BLACK);
+    AvatarStackPane battleArenaPane = new AvatarStackPane(arenaComponent, screenBounds.getWidth() - widthForHoveredCardComponent, screenBounds.getHeight(), Color.PURPLE);
+    battleArenaPane.setTranslateX(widthForHoveredCardComponent);
+    root.getChildren().addAll(hoveredCardPane, battleArenaPane);
 
-    //AvatarScene scene = new AvatarScene(root, screenBounds.getWidth(), screenBounds.getHeight());
-    //primaryStage.setScene(scene);
-    //primaryStage.show();
+    AvatarScene scene = new AvatarScene(root, screenBounds.getWidth(), screenBounds.getHeight());
+    primaryStage.setScene(scene);
+    primaryStage.show();
 
     try {
       this.loadCards();

@@ -16,8 +16,8 @@ public class AvatarVBox extends VBox {
             AvatarHoveredCard player1HoveredCard = new AvatarHoveredCard(new Rectangle( widthForHoveredAndProfileCard, heightForHoveredCard, Color.RED));
             AvatarHoveredCard player2HoveredCard = new AvatarHoveredCard(new Rectangle( widthForHoveredAndProfileCard, heightForHoveredCard, Color.RED));
 
-            AvatarPlayerCard player1ProfileCard = new AvatarPlayerCard(new Rectangle( widthForHoveredAndProfileCard,  heightForProfileCard, Color.YELLOW));
-            AvatarPlayerCard player2ProfileCard = new AvatarPlayerCard(new Rectangle( widthForHoveredAndProfileCard, heightForProfileCard, Color.YELLOW));
+            AvatarPlayerCard player1ProfileCard = new AvatarPlayerCard(new Rectangle( widthForHoveredAndProfileCard,  heightForProfileCard, Color.YELLOW), "Player 1");
+            AvatarPlayerCard player2ProfileCard = new AvatarPlayerCard(new Rectangle( widthForHoveredAndProfileCard, heightForProfileCard, Color.YELLOW), "Player 2");
 
             this.getChildren().addAll(player1HoveredCard, player1ProfileCard, player2ProfileCard, player2HoveredCard);
             this.setHeight(height);

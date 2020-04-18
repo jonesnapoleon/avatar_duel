@@ -42,10 +42,11 @@ public class Game{
         this.handlerEvent();
     }
 
+    // sandCommand("attack A B") = [attack, A, B]
+
     public void handlerEvent(){
         if(this.command[0] == "next")
             nextPhase();
-            
         else if(this.command[0] == "attack"){
             // Rincian apa attack apa gitu
             // fungsi buat change interface/tampilan ke select enemy char
@@ -70,7 +71,7 @@ public class Game{
 
                 }
                 else if (this.command[2] == "skill"){
-                    
+
                 }
             }
         }
