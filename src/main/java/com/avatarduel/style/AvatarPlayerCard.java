@@ -1,5 +1,6 @@
 package com.avatarduel.style;
 
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
@@ -9,18 +10,24 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.scene.control.Button;
 
+/**TODO
+ *  sambungin sama player somehow
+ *  alternatif :    1. jadiin variable dalem player atau Player jadi variable dalem PlayerCard
+ *                  2. bkin Player sama PlayerCard bisa saling komunikasi (termasuk antar PlayerCard)
+ */
 public class AvatarPlayerCard extends StackPane {
     private Text playertxt,hp,power,curPhase;
     private Button next;
     private int curAir,curWater,curFire,curEarth,curEnergy;//resource saat itu
     private int maxAir,maxWater,maxFire,maxEarth,maxEnergy;//max per turn
     private int curHP,maxHP;//urusan HP
-    private String phases; // nanti diisi pake phase-phase di back
+    private final String[] phase = {"Draw Phase", "Main Phase", "Battle Phase", "End Phase"}; // nanti diisi pake phase-phase di back
+    private int phaseNum;
 
     public AvatarPlayerCard(Node children,String player){
         super(children);
-        maxHP = 100;
-        curHP = 100;
+        maxHP = 80;
+        curHP = 80;
         maxAir = 0;
         curAir = 0;
         maxEnergy = 0;
@@ -32,10 +39,12 @@ public class AvatarPlayerCard extends StackPane {
         maxWater = 0;
         curWater = 0;
 
+        this.phaseNum = 0;
+
         playertxt = new Text(player);
         hp = new Text("HP "+curHP+"/"+maxHP);
         power = new Text("Air "+curAir+"/"+maxAir+"      Earth "+curEarth+"/"+curEarth+"   Energy "+curEnergy+"/"+maxEnergy+"    Fire "+curFire+"/"+maxFire+"    Water "+curWater+"/"+maxWater);
-        curPhase = new Text("Main Phase");
+        curPhase = new Text(phase[phaseNum]);
         next = new Button("Next Phase");
         this.setAlignment(playertxt ,Pos.TOP_LEFT);
         this.setAlignment(power ,Pos.CENTER);
@@ -47,7 +56,7 @@ public class AvatarPlayerCard extends StackPane {
         this.setMargin(hp, new Insets(12));
         this.setMargin(curPhase, new Insets(12));
         this.setMargin(next, new Insets(12));
-        //next.setVisible(false); //buat umpetin next sama phase
+        next.setOnAction(event -> nextTurn());
     }
     //SETTER (obvious sekali)
     private void setPowerTxt(){this.power.setText("Air "+curAir+"/"+maxAir+"      Earth "+curEarth+"/"+curEarth+"   Energy "+curEnergy+"/"+maxEnergy+"    Fire "+curFire+"/"+maxFire+"    Water "+curWater+"/"+maxWater); }
@@ -110,20 +119,28 @@ public class AvatarPlayerCard extends StackPane {
         setCurEnergy(maxEnergy);
         setCurFire(maxFire);
         setCurWater(maxWater);
-        setCurPhase("Draw Phase");
+        this.phaseNum=0;
+        setCurPhase(phase[phaseNum]);
         /*TODO
             ada setter phase ke main phase
         */
         curPhase.setVisible(true);
         next.setVisible(true);
-    }
 
+    }
+    public void nextTurn(){
+        this.phaseNum = (this.phaseNum + 1) % 4;
+        setCurPhase(phase[phaseNum]);
+        if(phaseNum == 3) this.endTurn();
+    }
     public void endTurn(){
         /*TODO
             ada setter phase ke main phase
             ada setter turn ke player sebelah
         */
-        curPhase.setVisible(false);
         next.setVisible(false);
+        /*try{wait(1000);}
+        catch(InterruptedException e){}
+        startTurn();*/
     }
 }
