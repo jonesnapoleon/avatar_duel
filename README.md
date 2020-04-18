@@ -24,4 +24,6 @@ All images and description are taken from [Avatar Wikia](https://avatar.fandom.c
 
 - Jones Napoleon Autumn - 13518086
 - Naufal Prima Yoriko - 13518146
-- Jonet Wira Murti - 
+- Jonet Wira Murti - 13518083
+- Filbert Wijaya - 13518077
+- a 'ghost' (yep, he is gone)
