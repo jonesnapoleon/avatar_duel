@@ -50,33 +50,56 @@ public class AvatarPlayerCard extends StackPane {
         //next.setVisible(false); //buat umpetin next sama phase
     }
     //SETTER (obvious sekali)
+    private void setPowerTxt(){this.power.setText("Air "+curAir+"/"+maxAir+"      Earth "+curEarth+"/"+curEarth+"   Energy "+curEnergy+"/"+maxEnergy+"    Fire "+curFire+"/"+maxFire+"    Water "+curWater+"/"+maxWater); }
+    private void setHPTxt(){this.hp.setText("HP "+curHP+"/"+maxHP);}
     public void setCurHP(int curHP){
         this.curHP = curHP;
+        setHPTxt();
     }
     public void setCurAir(int curAir){
         this.curAir = curAir;
+        setPowerTxt();
     }
     public void setCurEarth(int curEarth){
         this.curEarth = curEarth;
+        setPowerTxt();
     }
     public void setCurEnergy(int curEnergy){
         this.curEnergy = curEnergy;
+        setPowerTxt();
     }
     public void setCurFire(int curFire){
         this.curFire = curFire;
+        setPowerTxt();
     }
     public void setCurWater(int curWater){
         this.curWater = curWater;
+        setPowerTxt();
     }
     //setter current phase nanti dikaitin ke backend
     public void setCurPhase(String curPhase){this.curPhase.setText(curPhase);}
 
     //INCREMENTAL (dari kartu land)
-    public void increaseMaxAir(){this.maxAir++;}
-    public void increaseMaxEarth(){this.maxEarth++;}
-    public void increaseMaxEnergy(){this.maxEnergy++;}
-    public void increaseMaxFire(){this.maxFire++;}
-    public void increaseMaxWater(){this.maxWater++;}
+    public void increaseMaxAir(){
+        this.maxAir++;
+        setPowerTxt();
+    }
+    public void increaseMaxEarth(){
+        this.maxEarth++;
+        setPowerTxt();
+    }
+    public void increaseMaxEnergy(){
+        this.maxEnergy++;
+        setPowerTxt();
+    }
+    public void increaseMaxFire(){
+        this.maxFire++;
+        setPowerTxt();
+    }
+    public void increaseMaxWater(){
+        this.maxWater++;
+        setPowerTxt();
+    }
 
     /**
      * Fungsi dipanggil setiap mulai turn
@@ -87,7 +110,7 @@ public class AvatarPlayerCard extends StackPane {
         setCurEnergy(maxEnergy);
         setCurFire(maxFire);
         setCurWater(maxWater);
-        curPhase.setText("Draw Phase");
+        setCurPhase("Draw Phase");
         /*TODO
             ada setter phase ke main phase
         */
