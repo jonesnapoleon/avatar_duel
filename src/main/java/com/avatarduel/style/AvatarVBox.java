@@ -25,9 +25,9 @@ public class AvatarVBox extends VBox {
             AvatarHoveredCard player1HoveredCard = new AvatarHoveredCard(new Rectangle( widthForHoveredAndProfileCard, heightForHoveredCard, Color.RED));
             AvatarHoveredCard player2HoveredCard = new AvatarHoveredCard(new Rectangle( widthForHoveredAndProfileCard, heightForHoveredCard, Color.RED));
             Aura character = new Aura(65, "Air Funnel", "Technique to create", Element.AIR, 7, SkillEffect.AURA, -4, 4);
-            AvatarSkillCard a = new AvatarSkillCard(7, widthForHoveredAndProfileCard - 110, heightForHoveredCard - 20, Color.web("0x6cdfc5"), character);
-            a.setInfo();
-            player2HoveredCard.getChildren().addAll(a);
+            // AvatarSkillCard a = new AvatarSkillCard(7, widthForHoveredAndProfileCard - 110, heightForHoveredCard - 20, Color.web("0x6cdfc5"), character);
+            // a.setInfo();
+            // player2HoveredCard.getChildren().addAll(a);
 
             player1ProfileCard = new AvatarPlayerCard(new Rectangle( widthForHoveredAndProfileCard,  heightForProfileCard, Color.YELLOW), "Player 1");
             player2ProfileCard = new AvatarPlayerCard(new Rectangle( widthForHoveredAndProfileCard, heightForProfileCard, Color.YELLOW), "Player 2");

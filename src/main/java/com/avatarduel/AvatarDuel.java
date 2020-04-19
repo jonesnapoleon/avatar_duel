@@ -173,17 +173,20 @@ public class AvatarDuel extends Application {
     HandButtonGroup hb1 = new HandButtonGroup(0);
     HandButtonGroup hb2 = new HandButtonGroup(1);
 
-    game.addHandButtons(hb1);
-    game.addHandButtons(hb2);
-    game.addSkillButtons(sb1);
-    game.addSkillButtons(sb2);
-    game.addCharButtons(cb1);
-    game.addCharButtons(cb2);
+    // Game.getGame().addHandButtons(hb1);
+    // Game.getGame().addHandButtons(hb2);
+    // Game.getGame().addSkillButtons(sb1);
+    // Game.getGame().addSkillButtons(sb2);
+    // Game.getGame().addCharButtons(cb1);
+    // Game.getGame().addCharButtons(cb2);
+    if (Game.getGame() == null) {
+      System.out.println("GAADA GAMENYA");
+    }
 
     AvatarStackPane hoveredCardPane = new AvatarStackPane(hoveredCardComponent, widthForHoveredCardComponent, screenBounds.getHeight(), Color.BLACK);
     AvatarStackPane battleArenaPane = new AvatarStackPane(arenaComponent, screenBounds.getWidth() - widthForHoveredCardComponent, screenBounds.getHeight(), Color.PURPLE);
     battleArenaPane.setTranslateX(widthForHoveredCardComponent);
-    root.getChildren().addAll(hoveredCardPane, battleArenaPane, hb1, hb2, cb1, cb2, sb1, sb2);
+    root.getChildren().addAll(hoveredCardPane, battleArenaPane);
 
     AvatarScene scene = new AvatarScene(root, screenBounds.getWidth(), screenBounds.getHeight());
     primaryStage.setScene(scene);
