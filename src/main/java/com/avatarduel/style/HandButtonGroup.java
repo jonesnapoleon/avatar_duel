@@ -31,13 +31,10 @@ public class HandButtonGroup extends ButtonGroup{
                 }
             });
         }
-        */
-        }
-    
-       
-        public void changeCardInHand(int diff){
-            if(this.cardInHand + diff>=0 && this.cardInHand+diff<=10)
-                this.cardInHand += diff;
-        }
-    
+    }
+
+    public void changeCardInHand(int diff){
+        if(this.cardInHand + diff>=0 && this.cardInHand+diff<=10)
+            this.cardInHand += diff;
+    }
 }
