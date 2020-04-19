@@ -15,9 +15,9 @@ import javafx.event.EventHandler;
 //import javafx.scene.paint.Color;
 //import com.avatarduel.model.player;
 
-abstract class ButtonGroup extends HBox implements ObjectGroup{
-    private Button[] buttons;
-    private int mode, lastMode;
+public class ButtonGroup extends HBox implements ObjectGroup{
+    protected Button[] buttons;
+    protected int mode, lastMode;
 
     public ButtonGroup(int num, String text){
         super();
@@ -53,7 +53,7 @@ abstract class ButtonGroup extends HBox implements ObjectGroup{
 //                }
 //            });
         }
-    }
+    //}
 //    public void f1(){
 //        for(Button b : this.buttons){
 ////            b.setVisible(flg);
@@ -72,7 +72,7 @@ abstract class ButtonGroup extends HBox implements ObjectGroup{
 //    }
     @Override
     public void setVisibility(boolean flg){
-        for(Button b : this.buttons){
+        for(Button b : this.buttons ){
             b.setVisible(flg);
         }
         if(flg)
