@@ -44,14 +44,14 @@ public class AvatarField extends StackPane {
     }
 
     public void rotateCharCard() {
-        ((AvatarCharacterCard)this.getChildren().get(0)).setFieldRotate();
+        ((AvatarCharacterCard)this.getChildren().get(0)).setFieldRotate(sc.getCardState());
     }
 
     public void updateCard(SummonedCharacter sc) {
         if (!sc.isOccupied()) {
             this.killCard();
         } else if (this.getChildren().isEmpty()) {
-            this.activateCard(new AvatarCharacterCard(0, this.width*2/5, this.height*2/5, Color.web(this.color[sk.getSkill().getElement().ordinal()]), 
+            this.activateCard(new AvatarCharacterCard(0, this.width*2/5, this.height*2/5, Color.web(this.color[sc.getCharacter().getElement().ordinal()]),
                         sc.getCharacter()), sc.getCardState());
         } else {
             ((AvatarCharacterCard)this.getChildren().get(0)).setFieldRotate(sc.getCardState());
