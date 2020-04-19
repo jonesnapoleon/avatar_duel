@@ -15,3 +15,7 @@ id	name	element	description	imagepath
 14	Boiling Rock	FIRE	A massive Fire Nation prison.	file:src\\main\\resources\\com\\avatarduel\\card\\image\\land\\Boiling Rock.png
 15	Sun Warriors' Ancient City	FIRE	Large, historic settlement located on an island north of the Fire Nation mainland.	file:src\\main\\resources\\com\\avatarduel\\card\\image\\land\\Sun Warriors' Ancient City.png
 16	Fire Fountain City	FIRE	A large industrial city located in the Fire Nation.	file:src\\main\\resources\\com\\avatarduel\\card\\image\\land\\Fire Fountain City.png
+93	Rhodes Island	ENERGY	A pharmaceutical company that focuses on originium infection.	file:src\\main\\resources\\com\\avatarduel\\card\\image\\land\\Rhodes Island.png
+94	Bikini Bottom	ENERGY	An undersea city where SpongeBob and his friends live.	file:src\\main\\resources\\com\\avatarduel\\card\\image\\land\\Bikini Bottom.png
+95	Astera	ENERGY	More of a base than a village, built to support the Hunters and researchers as they explore the New World and its ecology.	file:src\\main\\resources\\com\\avatarduel\\card\\image\\land\\Astera.png
+96	Kaer Morhen	ENERGY	An old keep where witchers used to be trained.	file:src\\main\\resources\\com\\avatarduel\\card\\image\\land\\Kaer Morhen.png
