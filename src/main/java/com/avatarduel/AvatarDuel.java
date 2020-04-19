@@ -163,11 +163,12 @@ public class AvatarDuel extends Application {
     AvatarVBox arenaComponent = new AvatarVBox(false, screenBounds.getWidth() - widthForHoveredCardComponent, screenBounds.getHeight());
 
     ButtonGroup fieldButton = new ButtonGroup(6, "Select");
+    ButtonGroup fieldButton2 = new ButtonGroup(6, "Select");
 
     AvatarStackPane hoveredCardPane = new AvatarStackPane(hoveredCardComponent, widthForHoveredCardComponent, screenBounds.getHeight(), Color.BLACK);
     AvatarStackPane battleArenaPane = new AvatarStackPane(arenaComponent, screenBounds.getWidth() - widthForHoveredCardComponent, screenBounds.getHeight(), Color.PURPLE);
     battleArenaPane.setTranslateX(widthForHoveredCardComponent);
-    root.getChildren().addAll(hoveredCardPane, fieldButton, battleArenaPane);
+    root.getChildren().addAll(hoveredCardPane, battleArenaPane, fieldButton, fieldButton2);
 
     AvatarScene scene = new AvatarScene(root, screenBounds.getWidth(), screenBounds.getHeight());
     primaryStage.setScene(scene);
