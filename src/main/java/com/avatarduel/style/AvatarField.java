@@ -44,10 +44,10 @@ public class AvatarField extends StackPane {
         this.getChildren().add(skillCard);
     }
 
-    public void rotateCharCard() {
-        ((AvatarCharacterCard) this.getChildren().get(0)).setFieldRotate(sc.getCardState());
-    }
-
+//<<<<<<< HEAD
+//    public void rotateCharCard() {
+//        ((AvatarCharacterCard)this.getChildren().get(0)).setFieldRotate(sc.getCardState());
+//=======
     public void activateHandCard(AvatarCard avatarCard) {
         avatarCard.setHand();
         this.getChildren().clear();
