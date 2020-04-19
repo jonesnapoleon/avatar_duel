@@ -160,14 +160,14 @@ public class AvatarDuel extends Application {
 
     final double widthForHoveredCardComponent = screenBounds.getWidth() / 5;
     AvatarVBox hoveredCardComponent = new AvatarVBox(true, widthForHoveredCardComponent, screenBounds.getHeight());
-//    AvatarVBox arenaComponent = new AvatarVBox(false, screenBounds.getWidth() - widthForHoveredCardComponent, screenBounds.getHeight());
+    AvatarVBox arenaComponent = new AvatarVBox(false, screenBounds.getWidth() - widthForHoveredCardComponent, screenBounds.getHeight());
 
-    ControllerButtonGroup fieldButton = new ControllerButtonGroup(6, "Select");
+    ButtonGroup fieldButton = new ButtonGroup(6, "Select");
 
     AvatarStackPane hoveredCardPane = new AvatarStackPane(hoveredCardComponent, widthForHoveredCardComponent, screenBounds.getHeight(), Color.BLACK);
-//    AvatarStackPane battleArenaPane = new AvatarStackPane(arenaComponent, screenBounds.getWidth() - widthForHoveredCardComponent, screenBounds.getHeight(), Color.PURPLE);
-//    battleArenaPane.setTranslateX(widthForHoveredCardComponent);
-    root.getChildren().addAll(hoveredCardPane, fieldButton);//, battleArenaPane);
+    AvatarStackPane battleArenaPane = new AvatarStackPane(arenaComponent, screenBounds.getWidth() - widthForHoveredCardComponent, screenBounds.getHeight(), Color.PURPLE);
+    battleArenaPane.setTranslateX(widthForHoveredCardComponent);
+    root.getChildren().addAll(hoveredCardPane, fieldButton, battleArenaPane);
 
     AvatarScene scene = new AvatarScene(root, screenBounds.getWidth(), screenBounds.getHeight());
     primaryStage.setScene(scene);
