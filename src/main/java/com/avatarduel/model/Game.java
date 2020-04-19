@@ -54,6 +54,7 @@ public class Game{
             if(b.getID()==ID)
                 return b;
         }
+        return null;
     }
 
     public FieldCharButtonGroup getCharButtons(int ID){
@@ -61,6 +62,7 @@ public class Game{
             if(b.getID()==ID)
                 return b;
         }
+        return null;
     }
 
     public HandButtonGroup getHandButtons(int ID){
@@ -68,6 +70,7 @@ public class Game{
             if(b.getID()==ID)
                 return b;
         }
+        return null;
     }
 
     public void sendCommand(String cmd){
@@ -80,29 +83,50 @@ public class Game{
             nextPhase();
         else if(this.command[0] == "attack"){
             // Rincian apa attack apa gitu
+            /*
+                keterangan
+                    idx : index field musuh
+
+            */
             // fungsi buat change interface/tampilan ke select enemy char
         }
 
         else if(this.command[0] == "deploy"){
             // fungsi buat change interface/tampilan ke select field buat char sendiri
+            
         }
         else if(this.command[0] == "changepos"){
             // fungsi ubah posisi kartu di field
             // fungsi flip tampilan kartu di field
+            //this.players.get(this.turnId).getChar()[idx].rotate();
+            // render
         }
         else if (this.command[0] == "select"){
             if(this.command[1] == "attack"){
-
+                //this.players.get(this.turnId).killChar(idx);
+                // render
             }
             else if(this.command[1] == "remove"){
-
+                if (this.command[2] == "char") {
+                    //this.players.get(this.turnId).killChar(idx);
+                    // render
+                } else if (this.command[2] == "skill") {
+                    //this.players.get(this.turnId).removeSkill(idx);
+                    // render
+                }
             }
             else if(this.command[1]== "deploy"){
                 if(this.command[2] == "char"){
-
+                    //this.players.get(this.turnId).moveCharToField(idx, cardId, cardState);
+                    // render
                 }
                 else if (this.command[2] == "skill"){
-
+                    //this.players.get(this.turnId).moveCharToField(idx, cardId, cardState);
+                    // render
+                }
+                else if (this.command[2] == "land") {
+                    //this.players.get(this.turnId).playLandCard(cardId);
+                    // render
                 }
             }
         }

@@ -3,7 +3,7 @@ package com.avatarduel.style;
 import javafx.scene.control.Button;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-
+/*
 public class KillButton {
     public AvatarField af;
     public Button kill;
@@ -21,3 +21,4 @@ public class KillButton {
         });
     }
 }
+*/

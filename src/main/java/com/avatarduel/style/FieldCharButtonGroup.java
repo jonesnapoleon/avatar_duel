@@ -9,6 +9,7 @@ import javafx.scene.Node;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
+
 public class FieldCharButtonGroup extends ButtonGroup{
     public FieldCharButtonGroup(int ID){
         super(6, "Select", ID);
