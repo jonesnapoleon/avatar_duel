@@ -150,7 +150,7 @@ public class Player {
     }
   }
 
-  public void killChar(int idx, Player enemy) {
+  public void killChar(int idx) {
     if (this.chars[idx].isOccupied()) {
       this.chars[idx].removeCard();
     }

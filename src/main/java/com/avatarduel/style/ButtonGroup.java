@@ -11,7 +11,6 @@ import javafx.scene.Node;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
-
 public abstract class ButtonGroup extends HBox implements ObjectGroup{
     protected Button[] buttons;
     protected int mode, lastMode;

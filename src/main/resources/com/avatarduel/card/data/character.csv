@@ -47,3 +47,8 @@ id	name	element	description	imagepath	attack	defense	power
 62	June	EARTH	Bounty hunter with a shirshu as her pet.	file:src\\main\\resources\\com\\avatarduel\\card\\image\\character\\June.png	5	8	2
 63	Suki	EARTH	Leader of Kyoshi Warrior.	file:src\\main\\resources\\com\\avatarduel\\card\\image\\character\\Suki.png	8	8	3
 64	Pipsqueak	EARTH	Strongest member of Freedom Fighters.	file:src\\main\\resources\\com\\avatarduel\\card\\image\\character\\Pipsqueak.png	3	10	2
+97	Megumin ENERGY	Arch Wizard of the Crimson Demon Clan. Ekusupurooooooshion.	file:src\\main\\resources\\com\\avatarduel\\card\\image\\character\\Megumin.png	16	4	5
+98	Ainsley Harriott	ENERGY	Hehe boi.	file:src\\main\\resources\\com\\avatarduel\\card\\image\\character\\Ainsley Harriott.png	3	12	3
+99	Aoi Kunieda	ENERGY	A second-year from Ishiyama High School and the third leader of Red Tail.	file:src\\main\\resources\\com\\avatarduel\\card\\image\\character\\Aoi Kunieda.png	11	8	4
+100	Geralt of Rivia	ENERGY	A legendary witcher of the School of the Wolf.	file:src\\main\\resources\\com\\avatarduel\\card\\image\\character\\Geralt of Rivia.png	9	9	3
+101	Sekiro	ENERGY	A shinobi who serves Kuro, the Divine Heir. Commonly known as "Wolf".	file:src\\main\\resources\\com\\avatarduel\\card\\image\\character\\Sekiro.png	10	3	2
