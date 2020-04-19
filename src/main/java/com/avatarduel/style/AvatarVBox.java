@@ -6,6 +6,13 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
+import com.avatarduel.model.card.Aura;
+import com.avatarduel.model.card.Character;
+import com.avatarduel.model.card.*;
+import com.avatarduel.model.card.constant.CardState;
+import com.avatarduel.model.card.constant.Element;
+import com.avatarduel.model.card.constant.SkillEffect;
+
 public class AvatarVBox extends VBox {
     public AvatarPlayerCard player1ProfileCard,player2ProfileCard;
 
@@ -17,6 +24,10 @@ public class AvatarVBox extends VBox {
 
             AvatarHoveredCard player1HoveredCard = new AvatarHoveredCard(new Rectangle( widthForHoveredAndProfileCard, heightForHoveredCard, Color.RED));
             AvatarHoveredCard player2HoveredCard = new AvatarHoveredCard(new Rectangle( widthForHoveredAndProfileCard, heightForHoveredCard, Color.RED));
+            Aura character = new Aura(65, "Air Funnel", "Technique to create", Element.AIR, 7, SkillEffect.AURA, -4, 4);
+            AvatarSkillCard a = new AvatarSkillCard(7, widthForHoveredAndProfileCard - 110, heightForHoveredCard - 20, Color.web("0x6cdfc5"), character);
+            a.setInfo();
+            player2HoveredCard.getChildren().addAll(a);
 
             player1ProfileCard = new AvatarPlayerCard(new Rectangle( widthForHoveredAndProfileCard,  heightForProfileCard, Color.YELLOW), "Player 1");
             player2ProfileCard = new AvatarPlayerCard(new Rectangle( widthForHoveredAndProfileCard, heightForProfileCard, Color.YELLOW), "Player 2");
@@ -26,16 +37,29 @@ public class AvatarVBox extends VBox {
             this.setWidth(width);
         }
         else {
-            double heightForEachSection = height / 6 - 10;
-            double widthForArena = 8 * width / 23;
+            double heightForEachSection = height / 6;
+            double widthForArena = width;
 
             AvatarHandsCard player1HandsCard = new AvatarHandsCard(new Rectangle(), widthForArena, heightForEachSection, Color.YELLOW);
             AvatarHandsCard player2HandsCard = new AvatarHandsCard(new Rectangle(), widthForArena, heightForEachSection, Color.RED);
 
-            AvatarArenaLayout player1Layout = new AvatarArenaLayout(new Rectangle(), widthForArena, 2 * heightForEachSection, Color.ANTIQUEWHITE);
-            AvatarArenaLayout player2Layout = new AvatarArenaLayout(new Rectangle(), widthForArena, 2 * heightForEachSection, Color.DARKGREEN);
+            AvatarArenaLayout player1SkillLayout = new AvatarArenaLayout(new Rectangle(), widthForArena, heightForEachSection, Color.ANTIQUEWHITE);
+            AvatarArenaLayout player1CharLayout = new AvatarArenaLayout(new Rectangle(), widthForArena, heightForEachSection, Color.ANTIQUEWHITE);
+            AvatarArenaLayout player2CharLayout = new AvatarArenaLayout(new Rectangle(), widthForArena, heightForEachSection, Color.DARKGREEN);
+            AvatarArenaLayout player2SkillLayout = new AvatarArenaLayout(new Rectangle(), widthForArena, heightForEachSection, Color.DARKGREEN);
+            player1SkillLayout.getChildren().addAll(new FieldGroup(6, widthForArena, heightForEachSection, Color.web("0x5f575f")));
+            player1CharLayout.getChildren().addAll(new FieldGroup(6, widthForArena, heightForEachSection, Color.web("0x838691")));
+            player2SkillLayout.getChildren().addAll(new FieldGroup(6, widthForArena, heightForEachSection, Color.web("0x5f575f")));
+            player2CharLayout.getChildren().addAll(new FieldGroup(6, widthForArena, heightForEachSection, Color.web("0x838691")));
 
-            this.getChildren().addAll(player1HandsCard, player1Layout, player2Layout, player2HandsCard);
+            // Character skillCard = new Character(65, "Air Funnel", "Technique to create", Element.AIR, 7, 4, 4);
+            // AvatarCharacterCard a = new AvatarCharacterCard(0, /*widthForArena*2/30*/152, /*heightForEachSection - 20*/widthForArena*2/30, Color.web("0x6cdfc5"), skillCard);
+            // ((AvatarField)player1SkillLayout.getChildren().get(0)).activateCharCard(a, CardState.ATTACK);
+            // System.out.println(widthForArena/6);
+            // System.out.println(((AvatarField)player1SkillLayout.getChildren().get(0)).getWidth());
+
+            
+            this.getChildren().addAll(player1HandsCard, player1SkillLayout, player1CharLayout, player2CharLayout, player2SkillLayout, player2HandsCard);
             this.setHeight(height);
             this.setWidth(width);
         }

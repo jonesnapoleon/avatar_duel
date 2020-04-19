@@ -21,4 +21,12 @@ public class Aura extends Skill {
         c.getCharacter().setAttack(c.getCharacter().getAttack() - this.attack);
         c.getCharacter().setDefense(c.getCharacter().getDefense() - this.defense);
     }
+
+    public int getAttack() {
+        return this.attack;
+    }
+
+    public int getDefense() {
+        return this.defense;
+    }
 }
