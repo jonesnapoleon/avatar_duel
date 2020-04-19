@@ -66,6 +66,7 @@ public abstract class ButtonGroup extends HBox implements ObjectGroup{
             }
         }
     }
+
 //    public void f1(){
 //        for(Button b : this.buttons){
 ////            b.setVisible(flg);
