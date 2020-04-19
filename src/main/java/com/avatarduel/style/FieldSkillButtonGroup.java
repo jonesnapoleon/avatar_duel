@@ -12,32 +12,18 @@ import javafx.event.EventHandler;
 public class FieldSkillButtonGroup extends ButtonGroup{
     public FieldSkillButtonGroup(){
         super(6, "Select");
-        this.mode = 1;
-        this.lastMode = 1;
+        this.setVisibility(false);
+        this.mode = 0;
+        this.lastMode = 0;
         for(Button b : this.buttons){
             b.setOnAction(new EventHandler<ActionEvent>(){
                 @Override
                 public void handle(ActionEvent event){
                     if(mode == 1){
-                        //attack mode
+                        //place skill mode
 
                     }
-                    else if(mode == 2){
-                        //remove mode
-
-                    }
-                    else if(mode == 3){
-                        // append skill mode
-                        
-                    }
-                    else if(mode == 4){
-                        //change position mode
-
-                    }
-                    else if(mode ==5){
-                        //place char mode
-
-                    }
+                    // then else mode == 0 when button hidden
                 }
             });
         }

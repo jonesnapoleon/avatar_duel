@@ -12,8 +12,9 @@ import javafx.event.EventHandler;
 public class FieldCharButtonGroup extends ButtonGroup{
     public FieldCharButtonGroup(){
         super(6, "Select");
-        this.mode = 1;
-        this.lastMode = 1;
+        this.setVisibility(false);
+        this.mode = 0;
+        this.lastMode = 0;
         for(Button b : this.buttons){
             b.setOnAction(new EventHandler<ActionEvent>(){
                 @Override

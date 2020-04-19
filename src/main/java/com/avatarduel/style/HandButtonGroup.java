@@ -10,8 +10,11 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
 public class HandButtonGroup extends ButtonGroup{
-    public HandButtonGroup(){
-        super(6, "Select");
+    private int cardInHand;
+    public HandButtonGroup(int cardInHand){
+        super(cardInHand + 1, "Deploy");
+        this.cardInHand = cardInHand;
+        this.buttons[cardInHand].setText("Remove");
         this.mode = 1;
         this.lastMode = 1;
         for(Button b : this.buttons){
@@ -19,27 +22,18 @@ public class HandButtonGroup extends ButtonGroup{
                 @Override
                 public void handle(ActionEvent event){
                     if(mode == 1){
-                        //attack mode
+                        //deploy mode
 
                     }
-                    else if(mode == 2){
-                        //remove mode
+                    // else then the button is hidden 
 
-                    }
-                    else if(mode == 3){
-                        // append skill mode
-                        
-                    }
-                    else if(mode == 4){
-                        //change position mode
-
-                    }
-                    else if(mode ==5){
-                        //place char mode
-
-                    }
                 }
             });
+        }
+
+        public void changeCardInHand(int diff){
+            if(this.cardInHand + diff>=0 && this.cardInHand+diff<=10)
+                this.cardInHand += diff;
         }
     }
 }
