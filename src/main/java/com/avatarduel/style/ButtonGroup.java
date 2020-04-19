@@ -38,13 +38,19 @@ public abstract class ButtonGroup extends HBox implements ObjectGroup{
         return this.ID;
     }
 
+    public setMode(int mode){
+        this.mode = mode;
+    }
+
     @Override
     public void setVisibility(boolean flg){
         for(Button b : this.buttons){
             b.setVisible(flg);
         }
-        if(flg)
+        if(flg){
             this.mode = this.lastMode;
+            this.lastMode = 0;
+        }
         else{
             this.lastMode = this.mode;
             this.mode = 0;

@@ -15,16 +15,20 @@ public class FieldSkillButtonGroup extends ButtonGroup{
         this.setVisibility(false);
         this.mode = 0;
         this.lastMode = 0;
-        for(Button b : this.buttons){
-            b.setOnAction(new EventHandler<ActionEvent>(){
+        for(int i=0;i<this.buttons.length;i++){
+            this.buttons[i].setOnAction(new EventHandler<ActionEvent>(){
                 @Override
                 public void handle(ActionEvent event){
                     if(mode == 1){
                         //remove
-
-
+                        game.sendCommand("");
+                        game.getSkillButtons(ID).setVisibility(false);
+                        game.getHandButtons(ID).setMode(1);
+                        game.getHandButtons(ID).setVisibility(false);
+                        mode = 0;
                     }
-                    // then else mode == 0 when button hidden
+                    // else then the button is hidden 
+
                 }
             });
         }

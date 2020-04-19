@@ -70,16 +70,10 @@ public class Game{
         }
     }
 
-    // public String[] getResponse(){
-    //     return this.response;
-    // }
-
     public void sendCommand(String cmd){
         this.command = cmd.split(" ");
         this.handlerEvent();
     }
-
-    // sandCommand("attack A B") = [attack, A, B]
 
     public void handlerEvent(){
         if(this.command[0] == "next")
