@@ -9,9 +9,8 @@ import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 
-
-public class AvatarArenaLayout extends StackPane {
-    public AvatarArenaLayout(Node children, final double width, final double height, final Color color){
+public class AvatarStackPane extends StackPane {
+    public AvatarStackPane(Node children, final double width, final double height, final Color color){
         super(children);
         this.setBackground(new Background(new BackgroundFill(color, CornerRadii.EMPTY, Insets.EMPTY)));
         this.setPrefHeight(height);

@@ -43,10 +43,10 @@ public class AvatarVBox extends VBox {
             AvatarHandsCard player1HandsCard = new AvatarHandsCard(new Rectangle(), widthForArena, heightForEachSection, Color.YELLOW);
             AvatarHandsCard player2HandsCard = new AvatarHandsCard(new Rectangle(), widthForArena, heightForEachSection, Color.RED);
 
-            AvatarArenaLayout player1SkillLayout = new AvatarArenaLayout(new Rectangle(), widthForArena, heightForEachSection, Color.ANTIQUEWHITE);
-            AvatarArenaLayout player1CharLayout = new AvatarArenaLayout(new Rectangle(), widthForArena, heightForEachSection, Color.ANTIQUEWHITE);
-            AvatarArenaLayout player2CharLayout = new AvatarArenaLayout(new Rectangle(), widthForArena, heightForEachSection, Color.DARKGREEN);
-            AvatarArenaLayout player2SkillLayout = new AvatarArenaLayout(new Rectangle(), widthForArena, heightForEachSection, Color.DARKGREEN);
+            AvatarStackPane player1SkillLayout = new AvatarStackPane(new Rectangle(), widthForArena, heightForEachSection, Color.ANTIQUEWHITE);
+            AvatarStackPane player1CharLayout = new AvatarStackPane(new Rectangle(), widthForArena, heightForEachSection, Color.ANTIQUEWHITE);
+            AvatarStackPane player2CharLayout = new AvatarStackPane(new Rectangle(), widthForArena, heightForEachSection, Color.DARKGREEN);
+            AvatarStackPane player2SkillLayout = new AvatarStackPane(new Rectangle(), widthForArena, heightForEachSection, Color.DARKGREEN);
             player1SkillLayout.getChildren().addAll(new FieldGroup(6, widthForArena, heightForEachSection, Color.web("0x5f575f")));
             player1CharLayout.getChildren().addAll(new FieldGroup(6, widthForArena, heightForEachSection, Color.web("0x838691")));
             player2SkillLayout.getChildren().addAll(new FieldGroup(6, widthForArena, heightForEachSection, Color.web("0x5f575f")));
