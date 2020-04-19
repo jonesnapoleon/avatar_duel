@@ -3,7 +3,6 @@ package com.avatarduel.model;
 import java.util.List;
 import java.util.ArrayList;
 
-import com.avatarduel.ErrorClass;
 import com.avatarduel.model.card.*;
 import com.avatarduel.model.card.constant.CardState;
 import com.avatarduel.model.card.constant.Element;

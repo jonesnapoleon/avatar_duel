@@ -47,7 +47,7 @@ public class AvatarCharacterCard extends AvatarCard {
         cardType.setAlignment(typeText, Pos.CENTER_RIGHT);
         cardType.getChildren().addAll(typeText);
 
-        Image pict = new Image("file:///D:/Kuliah/OOP/avatar_duel/src/main/resources/com/avatarduel/card/image/character/Katara.png", temp_width*3/4,  temp_height*8/17, false, true);
+        Image pict = new Image("file:src\\main\\resources\\com\\avatarduel\\card\\image\\skill\\Air Funnel.png", temp_width*3/4,  temp_height*8/17, false, true);
         ImageView img = new ImageView(pict);
 
         AvatarStackPane desc = new AvatarStackPane(new Rectangle(), temp_width*3/4, temp_height*6/17, Color.WHITE);
