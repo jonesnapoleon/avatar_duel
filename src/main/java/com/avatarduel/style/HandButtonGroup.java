@@ -17,6 +17,7 @@ public class HandButtonGroup extends ButtonGroup{
         this.buttons[cardInHand].setText("Remove");
         this.mode = 1;
         this.lastMode = 1;
+        /*
         for(Button b : this.buttons){
             b.setOnAction(new EventHandler<ActionEvent>(){
                 @Override
@@ -30,10 +31,13 @@ public class HandButtonGroup extends ButtonGroup{
                 }
             });
         }
-
+        */
+        }
+    
+       
         public void changeCardInHand(int diff){
             if(this.cardInHand + diff>=0 && this.cardInHand+diff<=10)
                 this.cardInHand += diff;
         }
-    }
+    
 }

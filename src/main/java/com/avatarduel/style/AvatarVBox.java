@@ -43,6 +43,8 @@ public class AvatarVBox extends VBox {
             AvatarHandsCard player1HandsCard = new AvatarHandsCard(new Rectangle(), widthForArena, heightForEachSection, Color.YELLOW);
             AvatarHandsCard player2HandsCard = new AvatarHandsCard(new Rectangle(), widthForArena, heightForEachSection, Color.RED);
 
+            player1HandsCard.getChildren().add(new FieldGroup(10, widthForArena, heightForEachSection, Color.WHITE));
+
             AvatarArenaLayout player1SkillLayout = new AvatarArenaLayout(new Rectangle(), widthForArena, heightForEachSection, Color.ANTIQUEWHITE);
             AvatarArenaLayout player1CharLayout = new AvatarArenaLayout(new Rectangle(), widthForArena, heightForEachSection, Color.ANTIQUEWHITE);
             AvatarArenaLayout player2CharLayout = new AvatarArenaLayout(new Rectangle(), widthForArena, heightForEachSection, Color.DARKGREEN);

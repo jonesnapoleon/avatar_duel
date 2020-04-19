@@ -16,8 +16,8 @@ import javafx.event.EventHandler;
 //import com.avatarduel.model.player;
 
 abstract class ButtonGroup extends HBox implements ObjectGroup{
-    private Button[] buttons;
-    private int mode, lastMode;
+    protected Button[] buttons;
+    protected int mode, lastMode;
 
     public ButtonGroup(int num, String text){
         super();
@@ -52,7 +52,7 @@ abstract class ButtonGroup extends HBox implements ObjectGroup{
 ////                    System.out.println(this.getClass());
 //                }
 //            });
-        }
+        //}
     }
 //    public void f1(){
 //        for(Button b : this.buttons){

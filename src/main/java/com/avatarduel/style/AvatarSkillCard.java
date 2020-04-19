@@ -75,7 +75,7 @@ public class AvatarSkillCard extends AvatarCard {
         this.getChildren().addAll(cardName, cardType, img, desc);
     }
 
-    public  void setField() {
+    public void setField() {
         this.getChildren().clear();
         StackPane.setMargin(this, new Insets(10 , 75, 10, 75));
         Text name = new Text(this.skill.getName());

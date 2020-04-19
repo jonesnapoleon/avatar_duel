@@ -10,6 +10,7 @@ import javafx.scene.text.Text;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Rectangle;
+import com.avatarduel.model.card.constant.CardState;
 
 public class AvatarCharacterCard extends AvatarCard {
     private Character character;
@@ -74,13 +75,12 @@ public class AvatarCharacterCard extends AvatarCard {
         Text def = new Text("DEF/" + this.character.getDefense());
         def.setStyle("-fx-font: 12 arial;");
         Text pow = new Text("POW/" + this.character.getPower());
-
         pow.setStyle("-fx-font: 12 arial;");
         this.getChildren().addAll(name, elementText, atk, def, pow );
     }
 
-    public void setFieldRotate() {
-        if ((int)this.getRotate() == -90) {
+    public void setFieldRotate(CardState cardState) {
+        if (cardState == CardState.ATTACK) {
             this.setRotate(0);
         } else {
             this.setRotate(-90);
@@ -88,6 +88,19 @@ public class AvatarCharacterCard extends AvatarCard {
     }
 
     public  void setHand() {
+        this.getChildren().clear();
+        StackPane.setMargin(this, new Insets(10 , temp_width/3, 10, temp_width/3));
 
+        Text name = new Text(this.character.getName());
+        name.setStyle("-fx-font: 10 arial;");
+        Text elementText = new Text(this.character.getElement().toString());
+        elementText.setStyle("-fx-font: 10 arial;");
+        Text atk = new Text("ATK/" + this.character.getAttack());
+        atk.setStyle("-fx-font: 10 arial;");
+        Text def = new Text("DEF/" + this.character.getDefense());
+        def.setStyle("-fx-font: 10 arial;");
+        Text pow = new Text("POW/" + this.character.getPower());
+        pow.setStyle("-fx-font: 10 arial;");
+        this.getChildren().addAll(name, elementText, atk, def, pow );
     }
 }

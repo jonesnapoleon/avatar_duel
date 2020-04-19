@@ -122,5 +122,9 @@ public class Game{
     // public int getTurnInfo(){
     //     return this.turnId;
     // }
+
+    public Player getPlayer(int i) {
+        return this.players.get(i);
+    }
     
 }

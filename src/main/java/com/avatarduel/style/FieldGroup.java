@@ -7,6 +7,8 @@ import javafx.geometry.Pos;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
+import com.avatarduel.model.card.SummonedCharacter;
+import com.avatarduel.model.card.SummonedSkill;
 
 public class FieldGroup extends HBox {
     private AvatarField[] avatarField;
@@ -20,5 +22,11 @@ public class FieldGroup extends HBox {
             this.avatarField[i] = new AvatarField(width/fieldCount, height, color);
         }
         this.getChildren().addAll(this.avatarField);
+    }
+    public void updateAvatarField(int i, SummonedCharacter sc) {
+        this.avatarField[i].updateCard(sc);
+    }
+    public void updateAvatarField(int i, SummonedSkill sk) {
+        this.avatarField[i].updateCard(sk);
     }
 }

@@ -10,6 +10,10 @@ public class SummonedSkill implements ISummoned {
         this.occupied = false;
     }
 
+    public Skill getSkill() {
+        return this.skill;
+    }
+
     public SummonedCharacter getSChar() {
         return this.summonedCharacter;
     }
