@@ -23,11 +23,11 @@ public class ControllerButtonGroup extends HBox{
 //        System.out.println((this.buttons == null)? "IYA NULL" : "ENGGA");
 //        System.out.println((this.buttons.length));
 
-        for(Button b : this.buttons){
-            b = new Button(text);
-            b.setMaxWidth(Double.MAX_VALUE);
-            this.getChildren().add(b);
-//            b.setOnAction(new EventHandler<ActionEvent>(){
+        for(int i=0;i<num;i++){
+            this.buttons[i] = new Button(text);
+            this.buttons[i].setMaxWidth(Double.MAX_VALUE);
+//            this.getChildren().add(this.buttons[i]);
+//            this.buttons[i].setOnAction(new EventHandler<ActionEvent>(){
 //                @Override
 //                public void handle(ActionEvent event){
 //                    System.out.println("Hello Kitty");
@@ -36,14 +36,14 @@ public class ControllerButtonGroup extends HBox{
         }
         this.setSpacing(10);
         this.setPadding(new Insets(0, 20, 10, 20));
-//        this.getChildren().addAll(this.buttons);
+        this.getChildren().addAll(this.buttons);
+        setVisibility(false);
     }
 
-    public void setHidden(){
-
-    }
-
-    public void setVisible(){
-
+    public void setVisibility(boolean flg){
+        for(Button b : this.buttons){
+            System.out.println((b == null)? "IYA NULL" : "ENGGA");
+            b.setVisible(flg);
+        }
     }
 }
