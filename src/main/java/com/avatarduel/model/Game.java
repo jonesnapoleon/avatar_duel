@@ -8,6 +8,7 @@ import com.avatarduel.model.card.*;
 import com.avatarduel.model.card.constant.CardState;
 import com.avatarduel.model.card.constant.Element;
 import com.avatarduel.model.player.Player;
+import com.avatarduel.style.*;
 
 public class Game{
     private static Game game = new Game();
@@ -16,6 +17,9 @@ public class Game{
     private int turnId, phaseNum;
     //private final String[] phase = {"Draw Phase", "Main Phase 1", "Battle Phase", "Main Phase 2", "End Phase"};
     private String command[];
+    private ArrayList<HandButtonGroup> handButtons;
+    private ArrayList<FieldSkillButtonGroup> skillButtons;
+    private ArrayList<FieldCharButtonGroup> charButtons;
 
     private Game(){}
 
@@ -33,16 +37,46 @@ public class Game{
         this.phaseNum = 0;
     }
 
-    // public String[] getResponse(){
-    //     return this.response;
-    // }
+    public void addSkillButtons(FieldSkillButtonGroup skillButtons){
+        this.skillButtons.add(skillButtons);
+    }
+
+    public void addCharButtons(FieldCharButtonGroup charButtons){
+        this.charButtons.add(charButtons);
+    }
+
+    public void addHandButtons(HandButtonGroup handButtons){
+        this.handButtons.add(handButtons);
+    }
+
+    public FieldSkillButtonGroup getSkillButtons(int ID){
+        for(FieldSkillButtonGroup b : skillButtons){
+            if(b.getID()==ID)
+                return b;
+        }
+        return null;
+    }
+
+    public FieldCharButtonGroup getCharButtons(int ID){
+        for(FieldCharButtonGroup b : charButtons){
+            if(b.getID()==ID)
+                return b;
+        }
+        return null;
+    }
+
+    public HandButtonGroup getHandButtons(int ID){
+        for(HandButtonGroup b : handButtons){
+            if(b.getID()==ID)
+                return b;
+        }
+        return null;
+    }
 
     public void sendCommand(String cmd){
         this.command = cmd.split(" ");
         this.handlerEvent();
     }
-
-    // sandCommand("attack A B") = [attack, A, B]
 
     public void handlerEvent(){
         if(this.command[0] == "next")

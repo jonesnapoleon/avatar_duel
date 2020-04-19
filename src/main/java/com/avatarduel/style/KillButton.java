@@ -17,9 +17,8 @@ public class KillButton {
 //                    System.out.println(this.getClass());
                 //System.out.println("gilaaaaaaaaa");
                 af.rotateCharCard();
-                }
             }
-        );
+        });
     }
 }
 */
