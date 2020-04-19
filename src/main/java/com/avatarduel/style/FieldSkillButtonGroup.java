@@ -8,7 +8,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-
+/*
 public class FieldSkillButtonGroup extends ButtonGroup{
     public FieldSkillButtonGroup(){
         super(6, "Select");
@@ -29,3 +29,4 @@ public class FieldSkillButtonGroup extends ButtonGroup{
         }
     }
 }
+*/

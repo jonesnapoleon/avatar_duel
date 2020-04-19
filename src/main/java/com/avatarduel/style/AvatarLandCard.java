@@ -14,12 +14,12 @@ import javafx.scene.image.ImageView;
 import javafx.scene.shape.Rectangle;
 
 public class AvatarLandCard extends AvatarCard {
-    private Skill skill;
+    private Land land;
     private double temp_width;
     private double temp_height;
-    public AvatarLandCard(int spacing, final double width, final double height, final Color color, Skill skill) {
+    public AvatarLandCard(int spacing, final double width, final double height, final Color color, Land land) {
         super(spacing, width, height, color);
-        this.skill = skill;
+        this.land = land;
         this.temp_width = width;
         this.temp_height = height;
     }
@@ -34,9 +34,9 @@ public class AvatarLandCard extends AvatarCard {
         CornerRadii.EMPTY, new BorderWidths(2), Insets.EMPTY)));
 
         AvatarStackPane cardName = new AvatarStackPane(new Rectangle(), temp_width*3/4, temp_height*2/17, Color.web("0x6cdfc5"));
-        Text nameText = new Text(skill.getName());
+        Text nameText = new Text(land.getName());
         nameText.setStyle("-fx-font: 14 arial;");
-        Text elementText = new Text(skill.getElement().toString());
+        Text elementText = new Text(land.getElement().toString());
         elementText.setStyle("-fx-font: 14 arial;");
         cardName.setAlignment(nameText, Pos.CENTER_LEFT);
         cardName.setAlignment(elementText, Pos.CENTER_RIGHT);
@@ -51,11 +51,11 @@ public class AvatarLandCard extends AvatarCard {
         cardType.setAlignment(typeText, Pos.CENTER_RIGHT);
         cardType.getChildren().addAll(typeText);
 
-        Image pict = new Image("file:///D:/Kuliah/OOP/avatar_duel/src/main/resources/com/avatarduel/card/image/skill/Air Funnel.png", temp_width*3/4,  temp_height*8/17, false, true);
+        Image pict = new Image("file:///D:/Kuliah/OOP/avatar_duel/src/main/resources/com/avatarduel/card/image/land/Air Funnel.png", temp_width*3/4,  temp_height*8/17, false, true);
         ImageView img = new ImageView(pict);
 
         AvatarStackPane desc = new AvatarStackPane(new Rectangle(), temp_width*3/4, temp_height*6/17, Color.WHITE);
-        Text description = new Text(skill.getDesc());
+        Text description = new Text(land.getDesc());
         description.setStyle("-fx-font: 14 arial;");
         desc.setAlignment(description, Pos.TOP_LEFT);
         desc.setBorder(new Border(new BorderStroke(Color.BLACK, Color.BLACK, Color.BLACK, Color.BLACK,

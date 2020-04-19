@@ -9,6 +9,7 @@ import javafx.scene.Node;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
+/*
 public class FieldCharButtonGroup extends ButtonGroup{
     public FieldCharButtonGroup(){
         super(6, "Select");
@@ -44,3 +45,4 @@ public class FieldCharButtonGroup extends ButtonGroup{
         }
     }
 }
+*/

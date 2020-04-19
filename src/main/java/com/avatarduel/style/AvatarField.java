@@ -13,6 +13,7 @@ import javafx.scene.layout.*;
 import com.avatarduel.model.card.constant.CardState;
 import com.avatarduel.model.card.constant.Element;
 import com.avatarduel.model.card.*;
+import com.avatarduel.model.card.Character;
 
 public class AvatarField extends StackPane {
     private double width;
@@ -43,15 +44,17 @@ public class AvatarField extends StackPane {
         this.getChildren().add(skillCard);
     }
 
-    public void rotateCharCard() {
-        ((AvatarCharacterCard)this.getChildren().get(0)).setFieldRotate();
+    public void activateHandCard(AvatarCard avatarCard) {
+        avatarCard.setHand();
+        this.getChildren().clear();
+        this.getChildren().add(avatarCard);
     }
 
     public void updateCard(SummonedCharacter sc) {
         if (!sc.isOccupied()) {
             this.killCard();
         } else if (this.getChildren().isEmpty()) {
-            this.activateCard(new AvatarCharacterCard(0, this.width*2/5, this.height*2/5, Color.web(this.color[sk.getSkill().getElement().ordinal()]), 
+            this.activateCard(new AvatarCharacterCard(0, this.width*2/5, this.height, Color.web(this.color[sc.getCharacter().getElement().ordinal()]), 
                         sc.getCharacter()), sc.getCardState());
         } else {
             ((AvatarCharacterCard)this.getChildren().get(0)).setFieldRotate(sc.getCardState());
@@ -63,7 +66,17 @@ public class AvatarField extends StackPane {
         if (!sk.isOccupied()) {
             this.killCard();
         } else if (this.getChildren().isEmpty()) {
-            this.activateCard(new AvatarSkillCard(0, this.width*2/5, this.height*2/5, Color.web(this.color[sk.getSkill().getElement().ordinal()]), sk.getSkill()));
+            this.activateCard(new AvatarSkillCard(0, this.width*2/5, this.height, Color.web(this.color[sk.getSkill().getElement().ordinal()]), sk.getSkill()));
+        }
+    }
+
+    public void updateCard(Card card) {
+        if (card instanceof Character) {
+            this.activateHandCard(new AvatarCharacterCard(0, this.width*3/5, this.height, Color.web(this.color[card.getElement().ordinal()]), (Character)card));
+        } else if (card instanceof Skill) {
+            this.activateHandCard(new AvatarSkillCard(0, this.width*3/5, this.height, Color.web(this.color[card.getElement().ordinal()]), (Skill)card));
+        } else {
+            this.activateHandCard(new AvatarLandCard(0, this.width*3/5, this.height, Color.web(this.color[card.getElement().ordinal()]), (Land)card));
         }
     }
 

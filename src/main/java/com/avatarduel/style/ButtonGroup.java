@@ -15,11 +15,7 @@ import javafx.event.EventHandler;
 //import javafx.scene.paint.Color;
 //import com.avatarduel.model.player;
 
-<<<<<<< HEAD
-abstract class ButtonGroup extends HBox implements ObjectGroup{
-=======
 public abstract class ButtonGroup extends HBox implements ObjectGroup{
->>>>>>> 69a1cb1aa51f4199333f3f5865e42c3bce253d15
     protected Button[] buttons;
     protected int mode, lastMode;
 

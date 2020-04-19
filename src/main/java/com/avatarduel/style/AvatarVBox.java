@@ -42,6 +42,15 @@ public class AvatarVBox extends VBox {
 
             AvatarHandsCard player1HandsCard = new AvatarHandsCard(new Rectangle(), widthForArena, heightForEachSection, Color.YELLOW);
             AvatarHandsCard player2HandsCard = new AvatarHandsCard(new Rectangle(), widthForArena, heightForEachSection, Color.RED);
+            player1HandsCard.getChildren().add(new FieldGroup(10, widthForArena, heightForEachSection, Color.WHITE));
+            player2HandsCard.getChildren().add(new FieldGroup(10, widthForArena, heightForEachSection, Color.WHITE));
+
+            // Character charCard = new Character(65, "Air Funnel", "Technique to create", Element.AIR, 7, 4, 4);
+            // AvatarCharacterCard ac = new AvatarCharacterCard(0, widthForArena/10, heightForEachSection, Color.web("0x6cdfc5"), charCard );
+            // Character haha = new Character(65, "Air Funnel", "Technique to create", Element.AIR, 7, 4, 4);
+            // AvatarCharacterCard acs = new AvatarCharacterCard(0, widthForArena/10, heightForEachSection, Color.web("0x6cdfc5"), charCard );
+            // acs.setHand();
+            //((FieldGroup)player1HandsCard.getChildren().get(1)).avatarField[0].activateCard(acs, CardState.ATTACK);
 
             AvatarStackPane player1SkillLayout = new AvatarStackPane(new Rectangle(), widthForArena, heightForEachSection, Color.ANTIQUEWHITE);
             AvatarStackPane player1CharLayout = new AvatarStackPane(new Rectangle(), widthForArena, heightForEachSection, Color.ANTIQUEWHITE);
@@ -51,7 +60,7 @@ public class AvatarVBox extends VBox {
             player1CharLayout.getChildren().addAll(new FieldGroup(6, widthForArena, heightForEachSection, Color.web("0x838691")));
             player2SkillLayout.getChildren().addAll(new FieldGroup(6, widthForArena, heightForEachSection, Color.web("0x5f575f")));
             player2CharLayout.getChildren().addAll(new FieldGroup(6, widthForArena, heightForEachSection, Color.web("0x838691")));
-
+            //((AvatarField)((FieldGroup)(player1SkillLayout.getChildren().get(1))).getChildren().get(0)).activateCard(ac, CardState.ATTACK);
             // Character skillCard = new Character(65, "Air Funnel", "Technique to create", Element.AIR, 7, 4, 4);
             // AvatarCharacterCard a = new AvatarCharacterCard(0, /*widthForArena*2/30*/152, /*heightForEachSection - 20*/widthForArena*2/30, Color.web("0x6cdfc5"), skillCard);
             // ((AvatarField)player1SkillLayout.getChildren().get(0)).activateCharCard(a, CardState.ATTACK);
