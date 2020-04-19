@@ -27,3 +27,8 @@ id	name	element	description	imagepath	power	attack	defense
 90	Ice Prison	WATER	This technique covers an opponent in a prison made of ice.	file:src\\main\\resources\\com\\avatarduel\\card\\image\\skill\\Ice Prison.png	3	-4	2
 91	Tangle Mine	WATER	Military weapons invented by Hakoda to aid the Southern Water Tribe's quest to defeat the Fire Nation.	file:src\\main\\resources\\com\\avatarduel\\card\\image\\skill\\Tangle Mine.png	2	2	-1
 92	Wolf Armor	WATER	Protective battle gear worn by the warriors of the Southern Water Tribe.	file:src\\main\\resources\\com\\avatarduel\\card\\image\\skill\\Wolf Armor.png	2	2	1
+102	Never Gonna Give You Up	ENERGY	Never gonna let you down, Never gonna run around and desert you.	file:src\\main\\resources\\com\\avatarduel\\card\\image\\skill\\Never Gonna Give You Up.png	2	2	1
+103	Nigerundayo	ENERGY	Joestar's secret technique.	file:src\\main\\resources\\com\\avatarduel\\card\\image\\skill\\Nigerundayo.png	2	-5	4
+104	Red Fire Cannon	ENERGY	Generating high-temperature flames, the practitioner discharges it from one or both hands. Also refered as Shakkaho	file:src\\main\\resources\\com\\avatarduel\\card\\image\\skill\\Red Fire Cannon.png	2	3	0
+105	Shinobi Prosthetic	ENERGY	The arm was passed down by the Sculptor, and facilitates the use of several tools and weapons for Sekiro.	file:src\\main\\resources\\com\\avatarduel\\card\\image\\skill\\Red Fire Cannon.png	2	3	0
+106	Gordon Shout	ENERGY	Gordon Ramsay shouts and kicks someone out of the kitchen, mostly because it is raw and/or stone cold. 	file:src\\main\\resources\\com\\avatarduel\\card\\image\\skill\\Gordon Shout.png	4	-5	-5
