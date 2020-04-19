@@ -11,13 +11,12 @@ import javafx.event.EventHandler;
 
 public class HandButtonGroup extends ButtonGroup{
     private int cardInHand;
-    public HandButtonGroup(int cardInHand){
-        super(cardInHand + 1, "Deploy");
+    public HandButtonGroup(int cardInHand, int ID){
+        super(cardInHand + 1, "Deploy", ID);
         this.cardInHand = cardInHand;
         this.buttons[cardInHand].setText("Remove");
         this.mode = 1;
         this.lastMode = 1;
-        /*
         for(Button b : this.buttons){
             b.setOnAction(new EventHandler<ActionEvent>(){
                 @Override

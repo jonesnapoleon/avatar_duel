@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.Collections;
 
 import com.avatarduel.style.*;
+import com.avatarduel.model.Game;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
@@ -32,6 +33,7 @@ public class AvatarDuel extends Application {
   private static final String CHAR_CSV_FILE_PATH = "card/data/character.csv";
   private List<Card> deck1 = new ArrayList<Card>();
   private List<Card> deck2 = new ArrayList<Card>();
+  private Game game = Game.getGame();
 
   public void loadCards() throws IOException, URISyntaxException {
     int charComp = 25; int skillComp = 20; int landComp = 15;

@@ -1,5 +1,7 @@
 package com.avatarduel.style;
 
+
+import com.avatarduel.model.Game;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.shape.Rectangle;
@@ -8,23 +10,17 @@ import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-//import javafx.scene.layout.Background;
-//import javafx.scene.layout.BackgroundFill;
-//import javafx.scene.layout.CornerRadii;
-//import javafx.scene.layout.StackPane;
-//import javafx.scene.paint.Color;
-//import com.avatarduel.model.player;
 
-<<<<<<< HEAD
-abstract class ButtonGroup extends HBox implements ObjectGroup{
-=======
+
 public abstract class ButtonGroup extends HBox implements ObjectGroup{
->>>>>>> 69a1cb1aa51f4199333f3f5865e42c3bce253d15
     protected Button[] buttons;
     protected int mode, lastMode;
+    protected Game game = Game.getGame();
+    protected int ID;
 
-    public ButtonGroup(int num, String text){
+    public ButtonGroup(int num, String text, int ID){
         super();
+        this.ID = ID;
         this.buttons = new Button[num];
         for(int i=0;i<num;i++){
            this.buttons[i] = new Button(text);
@@ -36,54 +32,27 @@ public abstract class ButtonGroup extends HBox implements ObjectGroup{
         this.setSpacing(10);
         this.setPadding(new Insets(0, 20, 10, 20));
         this.getChildren().addAll(this.buttons);
-//        System.out.println((this.buttons == null)? "IYA NULL" : "ENGGA");
-//        System.out.println((this.buttons.length));
-//        setVisibility(false);
+    }
 
-//            this.buttons[i].setOnAction(new EventHandler<ActionEvent>(){
-//                @Override
-//                public void handle(ActionEvent event){
-//                    if(mode==1){
-////                        System.out.println("Hello Kitty");
-//                        f1();
-//                        mode = 2;
-//                    }
-//                    else{
-////                        System.out.println("Hello Kitty");
-//                        mode = 1;
-//                    }
-////                    this.buttons[i].setText("Clicked");
-////                    System.out.println(this.getClass());
-//                }
-//            });
+    public int getID(){
+        return this.ID;
+    }
+
+    @Override
+    public void setVisibility(boolean flg){
+        for(Button b : this.buttons){
+            b.setVisible(flg);
         }
-        @Override
-        public void setVisibility(boolean flg){
-            for(Button b : this.buttons){
-                b.setVisible(flg);
-            }
-            if(flg)
-                this.mode = this.lastMode;
-            else{
-                this.lastMode = this.mode;
-                this.mode = 0;
-            }
+        if(flg)
+            this.mode = this.lastMode;
+        else{
+            this.lastMode = this.mode;
+            this.mode = 0;
         }
     }
 
-//    public void f1(){
-//        for(Button b : this.buttons){
-////            b.setVisible(flg);
-//            b.setText("tceleS");
-////            b.setOnAction(new EventHandler<ActionEvent>(){
-////                @Override
-////                public void handle(ActionEvent event){
-//////                    this.buttons[i].setText("Clicked");
-//////                    System.out.println(this.getClass());
-////                    System.out.println("Hello Kitik");
-////                    f2();
-//////                    setVisibility(false);
-////                }
-////            });
-//        }
-//    }
+    public void setText(String text){
+        for(Button b : this.buttons)
+            b.setText(text);
+    }
+}

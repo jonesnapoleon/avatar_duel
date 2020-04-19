@@ -10,8 +10,8 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
 public class FieldCharButtonGroup extends ButtonGroup{
-    public FieldCharButtonGroup(){
-        super(6, "Select");
+    public FieldCharButtonGroup(int ID){
+        super(6, "Select", ID);
         this.setVisibility(false);
         this.mode = 0;
         this.lastMode = 0;
