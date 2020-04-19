@@ -38,7 +38,7 @@ public abstract class ButtonGroup extends HBox implements ObjectGroup{
         return this.ID;
     }
 
-    public setMode(int mode){
+    public void setMode(int mode){
         this.mode = mode;
     }
 

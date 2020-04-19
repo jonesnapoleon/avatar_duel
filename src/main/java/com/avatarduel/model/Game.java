@@ -54,6 +54,7 @@ public class Game{
             if(b.getID()==ID)
                 return b;
         }
+        return null;
     }
 
     public FieldCharButtonGroup getCharButtons(int ID){
@@ -61,6 +62,7 @@ public class Game{
             if(b.getID()==ID)
                 return b;
         }
+        return null;
     }
 
     public HandButtonGroup getHandButtons(int ID){
@@ -68,6 +70,7 @@ public class Game{
             if(b.getID()==ID)
                 return b;
         }
+        return null;
     }
 
     public void sendCommand(String cmd){
